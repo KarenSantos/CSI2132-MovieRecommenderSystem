@@ -10,8 +10,8 @@ public class DBConnection {
 
     private final String schema = "MovieRecomenderSystem";
     private final String url = "jdbc:postgresql://web0.site.uottawa.ca:15432/kdeal089";
-    private final String username = "kdeal089";
-    private final String password = "2Ak06rs2";
+    private final String username = "username";
+    private final String password = "password";
     private Connection db;
 
     public DBConnection() throws ClassNotFoundException, SQLException {

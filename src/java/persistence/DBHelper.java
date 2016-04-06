@@ -21,7 +21,7 @@ import model.*;
  */
 public class DBHelper {
     
-    private final int CHARAC_MOVIE_ID = 5;
+    private final int FIVE_CHARAC = 5;
     
     private DBConnection connection;
     
@@ -50,6 +50,20 @@ public class DBHelper {
         return users;
     }
     
+    public void insertUser(UserAccount user) throws SQLException{
+        String id = "'" + createID(FIVE_CHARAC, connection.getTotalRows("UserAccount")) + "',";
+        String password = "'" + user.getPassword() +"',";
+        String lastName = "'" + user.getLastName() +"',";
+        String firstName = "'" + user.getFirstName() +"',";
+        String email = "'" + user.getEmail() + "',";
+        String city = "'" + user.getCity() + "',";
+        String province = "'" + user.getProvince() + "',";
+        String country =  "'" + user.getCountry() + "',";
+        
+        String userInfo = id + password + lastName + firstName + email + city + province + country;
+        connection.insertValue("UserAccount", userInfo);
+    }
+    
     public List<Movie> selectAllMovies() throws SQLException{
         List<Movie> movies = new ArrayList<>();
         ResultSet rs = null;
@@ -67,7 +81,7 @@ public class DBHelper {
     }
     
     public void insertMovie(Movie movie) throws SQLException{
-        String id = "'" + createID(CHARAC_MOVIE_ID, connection.getTotalRows("Movie")) + "',";
+        String id = "'" + createID(FIVE_CHARAC, connection.getTotalRows("Movie")) + "',";
         String name = "'" + movie.getName() +"',";
         String date = "'" + movie.getDateReleased().get(Calendar.YEAR) 
                 + (movie.getDateReleased().get(Calendar.MONTH) + 1) + movie.getDateReleased().get(Calendar.DAY_OF_MONTH) + "',";
