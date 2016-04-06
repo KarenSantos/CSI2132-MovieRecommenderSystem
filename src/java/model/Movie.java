@@ -13,7 +13,7 @@ public class Movie {
     private String name;
     private Calendar dateReleased;
     private String language;
-    private boolean hasSubtitles;
+    private boolean subtitled;
     private String country;
     private int ageRestriction;
     
@@ -25,7 +25,7 @@ public class Movie {
         this.name = name;
         this.dateReleased = dateReleased;
         this.language = language;
-        this.hasSubtitles = hasSubtitles;
+        this.subtitled = hasSubtitles;
         this.country = country;
         this.ageRestriction = ageRestriction;
     }
@@ -62,12 +62,12 @@ public class Movie {
         this.language = language;
     }
 
-    public boolean isHasSubtitles() {
-        return hasSubtitles;
+    public boolean isSubtitled() {
+        return subtitled;
     }
 
-    public void setHasSubtitles(boolean hasSubtitles) {
-        this.hasSubtitles = hasSubtitles;
+    public void setSubtitled(boolean isSubtitled) {
+        this.subtitled = isSubtitled;
     }
 
     public String getCountry() {
