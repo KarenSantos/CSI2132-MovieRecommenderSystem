@@ -27,6 +27,9 @@ public class DBHelper {
     
     
     public DBHelper() {
+    }
+    
+    public void setConnection(){
         try {
             connection = new DBConnection();
         } catch (ClassNotFoundException ex) {

@@ -5,8 +5,12 @@
  */
 package control;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import model.UserAccount;
 import persistence.DBHelper;
 
 /**
@@ -18,7 +22,7 @@ import persistence.DBHelper;
 public class LoginControl {
 
     private DBHelper DBHelper;
-    
+
     private String email;
     private String password;
     private boolean submited;
@@ -66,23 +70,30 @@ public class LoginControl {
     }
 
     public String login() {
-        
-        DBHelper DBHelper = new DBHelper();
-//        UserAccount user = DBHelper.findUser(em, emailId);
-//
-//        if (user != null) {
-//            if (password.equals(user.getPassword())) {
-//                if (user instanceof Instructor) {
-//                    return "instructorMenu";
-//                } else if (user instanceof Student) {
-//                    return "studentMenu";
-//                }
-//            }
-//        }
-//        validated = true;
-//        FacesMessage msg = new FacesMessage("errado");
+
+        String returnPage = "unauthorized";
+        connect();
+        try {
+            UserAccount user = DBHelper.selectUserByEmail(email);
+            if (user != null) {
+                if (password.equals(user.getPassword())) {
+                    returnPage = "main";
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginControl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        validated = true;
+//        FacesMessage msg = new FacesMessage("wrong");
 //        FacesContext.getCurrentInstance().addMessage("status", msg);
 //        status = "incorrect";
-        return "unauthorized";
+        return returnPage;
+    }
+
+    private void connect() {
+        if (this.DBHelper == null) {
+            this.DBHelper = new DBHelper();
+        }
     }
 }

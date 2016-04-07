@@ -40,16 +40,6 @@ h4{
     font-size: 30px;
 }
 
-footer {
-    background-color: orange;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    overflow:hidden;
-}
-
 a:link, a:visited {
   color: #045491;
   font-weight : bold;

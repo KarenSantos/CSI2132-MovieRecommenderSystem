@@ -8,13 +8,13 @@ package model;
 public class Genre {
     
     private String genreID;
-    private String description;
+    private String name;
     
     public Genre(){}
     
     public Genre(String genreID, String description){
         this.genreID = genreID;
-        this.description = description;
+        this.name = description;
     }
 
     public String getGenreID() {
@@ -25,12 +25,12 @@ public class Genre {
         this.genreID = genreID;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String description) {
+        this.name = description;
     }
     
     @Override
