@@ -38,12 +38,7 @@ public class UserBean implements Serializable {
     private String addingStatus;
     private static String pass;
 
-    public UserBean() {
-
-        DBHelper = new DBHelper();
-
-        System.out.println("UserBean has started");
-    }
+    public UserBean() {}
 
     public String getEmail() {
         return email;
@@ -111,29 +106,43 @@ public class UserBean implements Serializable {
 
     public void signUp(ActionEvent actionEvent) {
 
-//        PasswordService ps = null;
-//        while (ps == null) {
-//            ps = PasswordService.getInstance();
-//        }
-//        String encryptedPW = "";
-//        try {
-//            PasswordService ps = PasswordService.getInstance();
-//            encryptedPW = ps.encrypt(password);
-        UserAccount user = new UserAccount("", password, lastName, firstName, email, city, province, country);
+        connect();
         try {
-            DBHelper.insertUser(user);
-            addingStatus = "User profile created successfully";
+            if(DBHelper.selectUserByEmail(email)==null){
+                PasswordService ps = null;
+                while (ps == null) {
+                    ps = PasswordService.getInstance();
+                }
+                String encryptedPW = "";
+                try {
+                    encryptedPW = ps.encrypt(password);
+                    UserAccount user = new UserAccount("", encryptedPW, lastName, firstName, email, city, province, country);
+                    try {
+                        DBHelper.insertUser(user);
+                        addingStatus = "User profile created successfully";
+                    } catch (SQLException ex) {
+                        addingStatus = "Error while creating user account. Try again later.";
+                        Logger
+                                .getLogger(UserBean.class
+                                        .getName()).log(Level.SEVERE, null, ex);
+                    }
+                } catch (Exception ex) {
+                    addingStatus = "Error while encrypting password. Try again later.";
+                    Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                addingStatus = "This email account already exists.";
+            }
         } catch (SQLException ex) {
             addingStatus = "Error while creating user account. Try again later.";
-            Logger
-                    .getLogger(UserBean.class
-                            .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        } catch (Exception ex) {
-//            addingStatus = "Error while encrypting password. Try again later.";
-//            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
-//        }
 
     }
 
+    private void connect() {
+        if (this.DBHelper == null) {
+            this.DBHelper = new DBHelper();
+        }
+    }
 }

@@ -37,7 +37,7 @@ public class DBHelper {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public List<UserAccount> selectAllUsers() throws SQLException{
         List<UserAccount> users = new ArrayList<>();
         ResultSet rs = null;
@@ -52,6 +52,26 @@ public class DBHelper {
         return users;
     }
     
+    public UserAccount selectUserByEmail(String email) throws SQLException{
+        ResultSet rs = null;
+        rs = connection.selectAllFromWhere(rs, "UserAccount", "email= '" + email + "'");
+        
+        UserAccount user = null;
+        if (rs.next()){
+            String id = rs.getString(1);
+            String password = rs.getString(2);
+            String lastName = rs.getString(3);
+            String firstName = rs.getString(4);
+            String city = rs.getString(6);
+            String province = rs.getString(7);
+            String country = rs.getString(8);
+            user = new UserAccount(id, password, lastName, firstName, email, city, province, country);
+        } 
+        rs.close();
+        connection.closeStatement();
+        return user;
+    }
+    
     public void insertUser(UserAccount user) throws SQLException{
 
         int totalrows = connection.getTotalRows("UserAccount");
@@ -63,7 +83,7 @@ public class DBHelper {
         String email = "'" + user.getEmail() + "',";
         String city = "'" + user.getCity() + "',";
         String province = "'" + user.getProvince() + "',";
-        String country =  "'" + user.getCountry() + "',";
+        String country =  "'" + user.getCountry() + "'";
         
         String userInfo = id + password + lastName + firstName + email + city + province + country;
         connection.insertValue("UserAccount", userInfo);

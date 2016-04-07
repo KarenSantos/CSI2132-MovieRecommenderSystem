@@ -7,6 +7,7 @@ package control;
 
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import persistence.DBHelper;
 
 /**
  *
@@ -16,23 +17,24 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class LoginControl {
 
-    private String emailId;
+    private DBHelper DBHelper;
+    
+    private String email;
     private String password;
     private boolean submited;
     private boolean validated;
     private String status;
-    private UserBean userBean;
 
-    public String entrar() {
+    public String goToIndex() {
         return "index";
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -64,6 +66,8 @@ public class LoginControl {
     }
 
     public String login() {
+        
+        DBHelper DBHelper = new DBHelper();
 //        UserAccount user = DBHelper.findUser(em, emailId);
 //
 //        if (user != null) {

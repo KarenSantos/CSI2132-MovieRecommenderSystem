@@ -13,6 +13,7 @@ public class DBConnection {
     private final String username = "kdeal089";
     private final String password = "";
     private Connection db;
+    private Statement st;
 
     public DBConnection() throws ClassNotFoundException, SQLException {
 
@@ -21,23 +22,34 @@ public class DBConnection {
         db = DriverManager.getConnection(url, username, password);
 
     }
+    
+    public void closeStatement() throws SQLException{
+        st.close();
+    }
 
-    public ResultSet selectAllFrom(ResultSet rs, String from) throws SQLException{
-        Statement st = db.createStatement();
-        String query = "SELECT * FROM " + schema + from;
+    public ResultSet selectAllFrom(ResultSet rs, String from) throws SQLException {
+        st = db.createStatement();
+        String query = "SELECT * FROM " + schema + "." + from;
+        rs = st.executeQuery(query);
+        st.close();
+        return rs;
+    }
 
+    public ResultSet selectAllFromWhere(ResultSet rs, String table, String condition) throws SQLException{
+        st = db.createStatement();
+        String query = "SELECT * FROM " + schema + "." + table + " WHERE " + condition;
         rs = st.executeQuery(query);
         return rs;
     }
-    
+
     public ResultSet selectFromJoin(ResultSet rs, String selection, String[] from) throws SQLException {
-        Statement st = db.createStatement();
+        st = db.createStatement();
 
         String allFrom = schema + "." + from[0];
         for (int i = 1; i < from.length; i++) {
             allFrom += ", " + schema + "." + from[i];
         }
-        
+
         String query = "SELECT " + selection + " FROM " + allFrom;
 
         rs = st.executeQuery(query);
@@ -51,24 +63,27 @@ public class DBConnection {
 //
 //        System.out.println();
 //        rs.close();
-//        st.close();
+        st.close();
         return rs;
 
     }
 
-    public void insertValue(String table, String values) throws SQLException{
-        Statement st = db.createStatement();
+    public void insertValue(String table, String values) throws SQLException {
+        st = db.createStatement();
 
-        String insert = "INSERT INTO " + schema + table + " VALUES (" + values + ");";
-        
+        String insert = "INSERT INTO " + schema + "." + table + " VALUES (" + values + ");";
+        System.out.println(insert);
         st.executeUpdate(insert);
+        st.close();
     }
-    
-    public int getTotalRows(String table) throws SQLException{
-        Statement st = db.createStatement();
-        String query = "SELECT COUNT(*) FROM " + schema + table;
+
+    public int getTotalRows(String table) throws SQLException {
+        st = db.createStatement();
+        String query = "SELECT COUNT(*) FROM " + schema + "." + table;
         ResultSet rs = st.executeQuery(query);
         rs.next();
+        rs.close();
+        st.close();
         return rs.getInt(1);
     }
 
@@ -121,5 +136,4 @@ public class DBConnection {
 //        rs.close();
 //        st.close();
 //    }
-
 }

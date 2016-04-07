@@ -7,19 +7,31 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
-        <link href="resources/site.css" rel="stylesheet"></link>
     </h:head>
 
-    <h:body>
+    <body>
 
-        <ui:define name="content">
-            <h1>Login</h1>
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                <h2>Login</h2>
                 <h:form>
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:outputLabel for="emailId" value="Email" />
-                        <p:inputText id="emailId" value="#{loginControl.emailId}" required="true" requiredMessage="An Email is required" label="email" />
+                        <p:outputLabel for="email" value="Email:" />
+                        <p:inputText 
+                            id="email" 
+                            value="#{loginControl.email}" 
+                            required="true" 
+                            requiredMessage="An Email is required" 
+                            label="email" />
+                        
                         <p:outputLabel for="password" value="Password:" />
-                        <p:password id="password" value="#{loginControl.password}" required="true" requiredMessage="A password is required" label="password" />
+                        <p:password id="password" 
+                                    value="#{loginControl.password}" 
+                                    required="true" 
+                                    requiredMessage="A password is required" 
+                                    label="password" />
+                        
                         <f:facet name="footer">
                             <p:commandButton value="Login" action="#{loginControl.login}"/>
                             <p:commandButton value="Reset" type="reset" />
@@ -29,7 +41,8 @@
                 </h:form>
 
             </ui:define>
+        </ui:composition>
 
-    </h:body>
+    </body>
 
 </html>
