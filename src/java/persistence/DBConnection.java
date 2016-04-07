@@ -8,10 +8,10 @@ import java.sql.*;
  */
 public class DBConnection {
 
-    private final String schema = "MovieRecomenderSystem";
+    private final String schema = "movie_recommender_system";
     private final String url = "jdbc:postgresql://web0.site.uottawa.ca:15432/kdeal089";
-    private final String username = "username";
-    private final String password = "password";
+    private final String username = "kdeal089";
+    private final String password = "";
     private Connection db;
 
     public DBConnection() throws ClassNotFoundException, SQLException {
@@ -24,7 +24,7 @@ public class DBConnection {
 
     public ResultSet selectAllFrom(ResultSet rs, String from) throws SQLException{
         Statement st = db.createStatement();
-        String query = "SELECT * FROM " + from;
+        String query = "SELECT * FROM " + schema + from;
 
         rs = st.executeQuery(query);
         return rs;
@@ -59,14 +59,14 @@ public class DBConnection {
     public void insertValue(String table, String values) throws SQLException{
         Statement st = db.createStatement();
 
-        String insert = "INSERT INTO " + table + " VALUES (" + values + ");";
+        String insert = "INSERT INTO " + schema + table + " VALUES (" + values + ");";
         
         st.executeUpdate(insert);
     }
     
     public int getTotalRows(String table) throws SQLException{
         Statement st = db.createStatement();
-        String query = "SELECT COUNT(*) FROM " + table;
+        String query = "SELECT COUNT(*) FROM " + schema + table;
         ResultSet rs = st.executeQuery(query);
         rs.next();
         return rs.getInt(1);

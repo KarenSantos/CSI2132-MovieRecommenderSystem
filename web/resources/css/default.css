@@ -6,13 +6,6 @@ body {
     padding: 3px;
 }
 
-#main {
-    padding: 5px;
-    padding-left:  15px;
-    padding-right: 15px;
-    background-color: #ffffff;
-    border-radius: 0 0 5px 5px;
-}
 p{
     font-family: Georgia, serif;
     color: black;
@@ -22,27 +15,31 @@ p{
 h1 {
     font-family: Georgia, serif;
     border-bottom: 3px solid #cc9900;
-    color: black;
+    color: white;
     font-size: 30px;
     text-align: center
 }
+
 h2 {
     font-family: Georgia, serif;
-    border-bottom: 3px solid #cc9900;
-    color: white;
+    color: black;
     font-size: 30px;
-}h3 {
+}
+
+h3 {
     font-family: Georgia, serif;
     border-bottom: 3px solid #cc9900;
     color: white;
     font-size: 30px;
 }
+
 h4{
     font-family: Georgia, serif;
     border-bottom: 3px solid #cc9900;
     color: lightblue;
     font-size: 30px;
 }
+
 footer {
     background-color: orange;
     position: absolute;
@@ -51,4 +48,16 @@ footer {
     height: 100px;
     width: 100%;
     overflow:hidden;
+}
+
+a:link, a:visited {
+  color: #045491;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+  text-decoration : underline;
 }

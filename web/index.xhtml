@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
 
 
@@ -12,21 +13,25 @@
 
     <body>
 
-        <h1>Movie Recommender</h1>
-        <h2> Welcome to Our Movie Recommender</h2>
-        <p>Sign Up or Login to continue</p>
+        <ui:composition template="./template.xhtml">
 
+            <ui:define name="content">
+                <h2> Welcome to Our Movie Recommender</h2>
+                <p>Sign Up or Login to continue</p>
+            </ui:define>
 
+            <ui:insert name="left">
+                <a href = "signup.xhtml"><input type = "button" style = "color:black; height:150px;width:150px; font-size:12px;font-family:'COMIC SANS MS' " value = "Sign Up"/></a>
 
-        <a href = "signup.xhtml"><input type = "button" style = "color:black; height:150px;width:150px; font-size:12px;font-family:'COMIC SANS MS' " value = "Sign Up"/></a>
+                <a href = "login.xhtml"><input type = "button" style = "color:black; height:150px;width:150px; font-size:12px;font-family:'COMIC SANS MS' " value = "Login"/></a>
+            </ui:insert>
 
-        <a href = "login.xhtml"><input type = "button" style = "color:black; height:150px;width:150px; font-size:12px;font-family:'COMIC SANS MS' " value = "Login"/></a>
+        </ui:composition>
+
 
     </body>
 
-    <footer>
-        <a href="about.xhtml">
-            About Us</a>
-    </footer>
+
+
 </html>
 

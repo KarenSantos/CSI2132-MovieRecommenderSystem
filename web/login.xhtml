@@ -1,38 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
         <link href="resources/site.css" rel="stylesheet"></link>
-
-            <script type="text/javascript">
-                <!--
-                     function login()
-                {
-                    var user = document.getElementById('userID').value;
-                    var password = document.getElementById('password').value;
-
-                }
-                //-->
-            </script>
     </h:head>
 
-    <body>
+    <h:body>
 
-        <h1>Login</h1>
-        <p style="color:red"> Please fill in the login info</p>
+        <ui:define name="content">
+            <h1>Login</h1>
+                <h:form>
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:outputLabel for="emailId" value="Email" />
+                        <p:inputText id="emailId" value="#{loginControl.emailId}" required="true" requiredMessage="An Email is required" label="email" />
+                        <p:outputLabel for="password" value="Password:" />
+                        <p:password id="password" value="#{loginControl.password}" required="true" requiredMessage="A password is required" label="password" />
+                        <f:facet name="footer">
+                            <p:commandButton value="Login" action="#{loginControl.login}"/>
+                            <p:commandButton value="Reset" type="reset" />
+                        </f:facet>
+                    </h:panelGrid>
+                    <h:messages></h:messages>
+                </h:form>
 
-        <p>Enter your UserID</p>
-        <textarea id = "userID"></textarea>
-        <p>Enter your password</p>
-        <textarea id = "password"></textarea>
+            </ui:define>
 
-
-        <form>
-            <input type="button" onclick="login()" value="Login">
-        </form>
-
-    </body>
+    </h:body>
 
 </html>

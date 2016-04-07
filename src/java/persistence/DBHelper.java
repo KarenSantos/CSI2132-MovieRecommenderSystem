@@ -26,12 +26,14 @@ public class DBHelper {
     private DBConnection connection;
     
     
-    public DBHelper(){
+    public DBHelper() {
         try {
             connection = new DBConnection();
         } catch (ClassNotFoundException ex) {
+            System.out.println("Class not found error");
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            System.out.println("SQLException error");
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -51,7 +53,10 @@ public class DBHelper {
     }
     
     public void insertUser(UserAccount user) throws SQLException{
-        String id = "'" + createID(FIVE_CHARAC, connection.getTotalRows("UserAccount")) + "',";
+
+        int totalrows = connection.getTotalRows("UserAccount");
+        
+        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
         String password = "'" + user.getPassword() +"',";
         String lastName = "'" + user.getLastName() +"',";
         String firstName = "'" + user.getFirstName() +"',";

@@ -9,23 +9,6 @@
     <h:head>
         <title>Sign Up</title>
         <link href="resources/site.css" rel="stylesheet"></link>
-
-        <script type="text/javascript">
-            <!--
-                  function signUp()
-            {
-                var user = document.getElementById("userID");
-                var password = document.getElementById("password");
-                var lastname = document.getElementById("lastname");
-                var firstname = document.getElementById("firstname");
-                var email = document.getElementById("email");
-                var city = document.getElementById("city");
-                var province = document.getElementById("province");
-                var country = document.getElementById("country");
-            }
-            //-->
-        </script>
-
     </h:head>
 
     <h:body>
@@ -37,51 +20,93 @@
                 <h2>Sign Up</h2>
                 <p style = "color:red"> Please fill in the following fields</p>
                 <h:form>
-                    <p>Enter your UserID</p>
-                    <textarea id = "userID"></textarea>
-                    <p>Enter your password</p>
-                    <textarea id = "password"></textarea>
-                    <p>Enter your last Name</p>
-                    <textarea id = "lastname"></textarea>
-                    <p>Enter your first Name
-                        <textarea id = "firstname"></textarea></p>
+                    <h:panelGrid columns="3">
 
-                    <p:outputLabel value="Email:*"/>
-                    <p:inputText id="email"
-                                 value="#{userBean.email}"
-                                 validatorMessage="Invalid Email format"
-                                 label="Email" required="true"
-                                 requiredMessage="An Email is required"
-                                 title="Enter your email (e.g. xxx@xxx.xxx)">
-                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                        <p:ajax event="keyup" update="emailMsg"/>
-                    </p:inputText>
-                    <p:message id="emailMsg" for="email"/>
+                        <p:outputLabel for="email" value="Email:"/>
+                        <p:inputText id="email"
+                                     value="#{userBean.email}"
+                                     validatorMessage="Invalid Email format"
+                                     label="Email" required="true"
+                                     requiredMessage="An Email is required"
+                                     title="Enter your email (e.g. xxx@xxx.xxx)"
+                                     maxlength="30">
+                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                            <p:ajax event="keyup" update="emailMsg"/>
+                        </p:inputText>
+                        <p:message id="emailMsg" for="email"/>
 
-                    <p>Enter your city</p>
-                    <textarea id = "city"></textarea>
-                    <p>Enter your province</p>
-                    <textarea id = "province"></textarea>
-                    <p>Enter your country</p>
-                    <textarea id = "country"></textarea>
+                        <p:outputLabel for="password" value="Password:"/>
+                        <p:password id="password"
+                                    value="#{userBean.password}"
+                                    feedback="true"
+                                    promptLabel="Enter Password"
+                                    weakLabel="Weak Password"
+                                    goodLabel="Good Password"
+                                    strongLabel="Strong Password"
+                                    match="confPwd" 
+                                    required="true"
+                                    requiredMessage="A Password is required"
+                                    maxlength="10"/>
+                        <p:message for="password"/>
+                        
+                        <p:outputLabel for="confPwd" value="Confirm Password:"/>
+                        <p:password id="confPwd"
+                                    value="#{userBean.password}"
+                                    required="true"
+                                    title="Repeat password as above"
+                                    requiredMessage="You need to confirm your password"
+                                    maxlength="10"/>
+                        <p:message for="confPwd"/>
 
-                    <form>
-                        <input type="button" onclick="signUp()" value="Sign Up"></input>
-                    </form>
+                        <p:outputLabel for="firstName" value="First Name:"/>
+                        <p:inputText id="firstName"
+                                     value="#{userBean.firstName}"
+                                     required="true"
+                                     requiredMessage="A name is required"
+                                     maxlength="20"/>
+                        <p:message for="firstName"/>
+                        
+                        <p:outputLabel for="lastName" value="Last Name:"/>
+                        <p:inputText id="lastName"
+                                     value="#{userBean.lastName}"
+                                     label="Last Name"
+                                     maxlength="20">
+                            <p:ajax event="keyup" update="lastNameMsg"/>
+                        </p:inputText>
+                        <p:message  id="lastNameMsg" for="lastName"/>
 
-                    <p:commandButton id="submitBtn" actionListener="#{userBean.signUp}"
-                                     value="Create Account"
-                                     onclick="PF('bui').show()" oncomplete="PF('bui').hide()"/>
-                    <p:commandButton value="Reset" type="reset" />
-<!--                    <p><h:outputText  
-                            style="color:royalblue; font-size: large; font-weight: bold" 
-                            id="status" 
-                            value="#{userBean}"/></p>-->
-                    </h:form>
+                        <p:outputLabel value="City:"/>
+                        <p:inputText id="city"
+                                     value="#{userBean.city}"
+                                     maxlength="30"/>
+                        <p:message for="city"/>
+
+                        <p:outputLabel for="province" value="Province:"/>
+                        <p:inputText id="province"
+                                     value="#{userBean.province}"
+                                     maxlength="2"
+                                     title="Enter the 2 letters of your province"/>
+                        <p:message for="province"/>
+
+                        <p:outputLabel for="country" value="Country:"/>
+                        <p:inputText id="country"
+                                     value="#{userBean.country}"
+                                     maxlength="20"/>
+                        <p:message for="country"/>
+
+                        <p:commandButton id="submitBtn" actionListener="#{userBean.signUp}"
+                                         value="Create Account"
+                                         onclick="PF('bui').show()" oncomplete="PF('bui').hide()"/>
+                        <p:commandButton value="Reset" type="reset"/>
+                        <p><h:outputText  
+                                style="color:royalblue; font-size: large; font-weight: bold" 
+                                id="status" 
+                                value="#{userBean.addingStatus}"/></p>
+                    </h:panelGrid>
+                </h:form>
 
             </ui:define>
         </ui:composition>
-
 
     </h:body>
 </html>
