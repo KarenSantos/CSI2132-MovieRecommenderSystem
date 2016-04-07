@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import model.PasswordService;
 import model.UserAccount;
 import persistence.DBHelper;
 
@@ -29,8 +30,8 @@ public class LoginControl {
     private boolean validated;
     private String status;
 
-    public String goToIndex() {
-        return "index";
+    public String goToMain() {
+        return "main";
     }
 
     public String getEmail() {
@@ -70,18 +71,33 @@ public class LoginControl {
     }
 
     public String login() {
-
         String returnPage = "unauthorized";
         connect();
+        PasswordService ps = null;
+        while (ps == null) {
+            ps = PasswordService.getInstance();
+        }
+        String encryptedPW = "";
         try {
-            UserAccount user = DBHelper.selectUserByEmail(email);
-            if (user != null) {
-                if (password.equals(user.getPassword())) {
-                    returnPage = "main";
+            encryptedPW = ps.encrypt(password);
+            try {
+                UserAccount user = DBHelper.selectUserByEmail(email);
+                if (user != null) {
+                    if (encryptedPW.equals(user.getPassword())) {
+                        returnPage = "main";
+                    } else {
+                        status = "Incorrect password or email.";
+                    }
+                } else {
+                    status = "Incorrect email or password.";
                 }
+            } catch (SQLException ex) {
+                Logger.getLogger(LoginControl.class.getName()).log(Level.SEVERE, null, ex);
+                status = "Could not connect to the database. Try again later.";
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(LoginControl.class.getName()).log(Level.SEVERE, null, ex);
+            status = "An error has occured. Try again later.";
         }
 
         validated = true;

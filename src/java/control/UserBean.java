@@ -137,9 +137,8 @@ public class UserBean implements Serializable {
             addingStatus = "Error while creating user account. Try again later.";
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
+    
     private void connect() {
         if (this.DBHelper == null) {
             this.DBHelper = new DBHelper();

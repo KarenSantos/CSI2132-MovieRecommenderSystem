@@ -16,11 +16,8 @@ public class DBConnection {
     private Statement st;
 
     public DBConnection() throws ClassNotFoundException, SQLException {
-
         Class.forName("org.postgresql.Driver");
-
         db = DriverManager.getConnection(url, username, password);
-
     }
     
     public void closeStatement() throws SQLException{
@@ -63,7 +60,6 @@ public class DBConnection {
 //
 //        System.out.println();
 //        rs.close();
-        st.close();
         return rs;
 
     }
@@ -82,9 +78,10 @@ public class DBConnection {
         String query = "SELECT COUNT(*) FROM " + schema + "." + table;
         ResultSet rs = st.executeQuery(query);
         rs.next();
+        int result = rs.getInt(1);
         rs.close();
         st.close();
-        return rs.getInt(1);
+        return result;
     }
 
 //    public static void SelectF(Connection db) throws SQLException {

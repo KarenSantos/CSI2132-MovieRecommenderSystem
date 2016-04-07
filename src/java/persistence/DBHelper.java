@@ -25,11 +25,7 @@ public class DBHelper {
     
     private DBConnection connection;
     
-    
     public DBHelper() {
-    }
-    
-    public void setConnection(){
         try {
             connection = new DBConnection();
         } catch (ClassNotFoundException ex) {
@@ -40,7 +36,7 @@ public class DBHelper {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public List<UserAccount> selectAllUsers() throws SQLException{
         List<UserAccount> users = new ArrayList<>();
         ResultSet rs = null;

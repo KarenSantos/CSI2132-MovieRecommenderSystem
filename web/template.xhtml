@@ -13,15 +13,19 @@
     </h:head>
 
     <h:body>
-
         <div id="top" onclick="">
             <ui:insert name="top"><h1><a href="index.xhtml">Movie Recommender</a></h1></ui:insert>
         </div>
         <div>
-            <div id="left">
+            <div id="left" class="left_content">
                 <ui:insert name="left">
-                    <p><p:button outcome="signup" value="Sign Up"></p:button></p>
-                    <p><p:button outcome="login" value="Login"></p:button></p>
+                    <p><p:button outcome="myAccount" value="My Account"></p:button></p>
+                    <p><p:button outcome="movies" value="Movies"></p:button></p>
+                    <p><p:button outcome="stars" value="Stars"></p:button></p>
+                    <p><p:button outcome="directors" value="Directors"></p:button></p>
+                    <p><p:button outcome="advancedSearch" value="Advanced Search"></p:button></p>
+                    <p></p>
+                    <p><p:button outcome="index" value="Logout"></p:button></p>
                 </ui:insert>
             </div>
             <div>

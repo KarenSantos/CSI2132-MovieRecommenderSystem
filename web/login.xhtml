@@ -13,6 +13,11 @@
 
         <ui:composition template="./template.xhtml">
 
+            <ui:define name="left">
+                    <p><p:button outcome="signup" value="Sign Up"></p:button></p>
+                    <p><p:button outcome="login" value="Login"></p:button></p>
+            </ui:define>
+            
             <ui:define name="content">
                 <h2>Login</h2>
                 <h:form>
@@ -24,20 +29,23 @@
                             required="true" 
                             requiredMessage="An Email is required" 
                             label="email" />
-                        
+
                         <p:outputLabel for="password" value="Password:" />
                         <p:password id="password" 
                                     value="#{loginControl.password}" 
                                     required="true" 
                                     requiredMessage="A password is required" 
                                     label="password" />
-                        
+
                         <f:facet name="footer">
                             <p:commandButton value="Login" action="#{loginControl.login}"/>
                             <p:commandButton value="Reset" type="reset" />
                         </f:facet>
                     </h:panelGrid>
-                    <h:messages></h:messages>
+                    <p><h:outputText  
+                            style="color:royalblue; font-size: large; font-weight: bold" 
+                            id="status" 
+                            value="#{loginControl.status}"/></p>               
                 </h:form>
 
             </ui:define>
