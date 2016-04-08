@@ -26,34 +26,48 @@ country:America
 
 lastname:Wayans
 firstname:Damon
+dbo:November 18 1982
+country:America
+
+lastname:Riggle
+firstname:Bob
+dbo:April 21 1970
+country:America
+
+lastname:Salvati
+firstname:Jakob
+dbo:
+country:America
+
+lastname:Watson
+firstname:Emily
+dbo:14 January 1967
+country:England
+
+lastname:Henrie
+firstname:David
+dbo:11 July 1989 
+country:America
+
+lastname:
+firstname:
 dbo:
 country:
 
-lastname:Wayans
-firstname:Damon
+lastname:
+firstname:
 dbo:
 country:
 
-lastname:Wayans
-firstname:Damon
+lastname:
+firstname:
 dbo:
 country:
 
-lastname:Wayans
-firstname:Damon
+lastname:
+firstname:
 dbo:
 country:
-
-lastname:Wayans
-firstname:Damon
-dbo:
-country:
-
-lastname:Wayans
-firstname:Damon
-dbo:
-country:
-
 
 
 
