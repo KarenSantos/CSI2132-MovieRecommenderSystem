@@ -1,326 +1,239 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+Info:The Signal-20140710-English-true-Germany-13-William Eubank
+Genres:Action-Thriller
+Actors:Brenton Thwaites-Olivia Cooke-Beau Knapp
+Roles:
+Studios:Automatik Entertainment-Low Spark Films-Signal Film Group
 
-\f0\fs24 \cf0 
-Info:The Signal-10 July 2014-English-true-Germany-13\
-Genres:Action-Thriller\
-Oscars:\
-Actors: Brenton Thwaites-Olivia Cooke-Beau Knapp \
-Roles:\
-Directors:William Eubank\
-Studios: Automatik Entertainment-Low Spark Films-Signal Film Group\
-\
-Info:Let's Be Cops-13 August 2014-English-true-USA-18\
-Genres:Comedy\
-Oscars:\
-Actors: Jake Johnson- Damon Wayans Jr-Bob Riggle\
-Roles:\
-Directors: Luke Greenfield\
-Studios: Genre Films-Twentieth Century Fox Film Corporation-WideAwake\
-\
-Info:Little Boy-24 April 2015-English-true-USA-18\
-Genres:War-Drama\
-Oscars:\
-Actors: Jakob Salvati-Emily Watson-David Henrie\
-Roles:\
-Directors: Alejandro Monteverde\
-Studios: Metanoia Films-Santa Fé Films\
-\
-Info:A Walk Among the Tombstones-10 September 2014-English-false-USA-18\
-Genres: Crime-Drama-Mystery-Thriller\
-Oscars:\
-Actors: Liam Neeson-Dan Stevens-David Harbour\
-Roles:\
-Directors:Scott Frank\
-Studios:1984 Private Defense Contractors-Cross Creek Pictures-Da Vinci Media \
-\
-Info:Son of God-28 February 2014-English-true-USA-13\
-Genres:Biography-Drama-History\
-Oscars:\
-Actors:Diogo Morgado-Amber Rose Revah-Sebastian Knapp\
-Roles:\
-Directors: Christopher Spencer\
-Studios: Hearst Entertainment Productions-LightWorkers Media \
-\
-Info:Non-Stop-28 February 2014-English-true-USA-13\
-Genres:Action-Mystery-Thriller\
-Oscars:\
-Actors: Liam Neeson-Julianne Moore-Scoot McNairy\
-Roles:\
-Directors: Jaume Collet\
-Studios: StudioCanal-Anton Capital Entertainment (ACE)-Silver Pictures\
-\
-Info:The Legend of Hercules-10 Janaury 2014-English-false-USA-13\
-Genres:Action-Adventure-Fantasy\
-Oscars:\
-Actors: Kellan Lutz-Gaia Weiss-Scott Adkins\
-Roles:\
-Directors:Renny Harlin\
-Studios: Millennium Films\
-\
-Info:RoboCop -12 February 2014-English-true-USA-13\
-Genres:Action-Sci-Fi-Thriller\
-Oscars:\
-Actors: Joel Kinnaman-Gary Oldman-Michael Keaton \
-Roles:\
-Directors:José Padilha\
-Studios: Metro-Goldwyn-Mayer (MGM)-Columbia Pictures-Strike Entertainment \
-\
-Info:As Above, So Below-29 August 2014-English-false-USA-18\
-Genres:Horror-Mystery-Thriller\
-Oscars:\
-Actors: Perdita Weeks-Ben Feldman-Edwin Hodge\
-Roles:\
-Directors: John Erick Dowdle\
-Studios:Legendary Pictures-Universal Pictures-Brothers Dowdle Productions \
-\
-Info:Oculus-11 April 2014-English-true-USA-18\
-Genres:Horro\
-Oscars:\
-Actors: Karen Gillan-Brenton Thwaites-Katee Sackhoff\
-Roles:\
-Directors:Mike Flanagan\
-Studios: Relativity Media, Intrepid Pictures, MICA Entertainment\
-\
-Info:That Awkward Moment-31 January 2014-English-false-USA-13\
-Genres:Comedy-Romance\
-Oscars:\
-Actors: Zac Efron-Michael B. Jordan-Miles Teller\
-Roles:\
-Directors: Tom Gormican\
-Studios: Treehouse Pictures-Aversano Films-What If It Barks Films \
-\
-Info:A Promise -16 April 2014-English-true-France-13\
-Genres: Drama-Romance\
-Oscars:\
-Actors: Rebecca Hall-Alan Rickman-Richard Madden\
-Roles:\
-Directors:Patrice Leconte\
-Studios: Fidélité Films-Wild Bunch-Scope Pictures\
-\
-Info:Sex Tape-18 July 2014-English-true-USA-18\
-Genres:Comedy\
-Oscars:\
-Actors: Jason Segel-Cameron Diaz-Rob Corddry\
-Roles:\
-Directors: Jake Kasdan\
-Studios: Escape Artists-LStar Capital-Media Rights Capital \
-\
-Info:What If-15 August 2014-English-true-USA-13\
-Genres:Comedy-Romance\
-Oscars:\
-Actors: Daniel Radcliffe-Zoe Kazan-Megan Park \
-Roles:\
-Directors:Michael Dowse\
-Studios: No Trace Camping-Caramel Film-Fastnet Films\
-\
-Info:Under the Skin-14 March 2014-English-true-UK-18\
-Genres:Drama-Sci-Fi-Thriller\
-Oscars:\
-Actors: Scarlett Johansson-Jeremy McWilliams, Lynsey Taylor Mackay \
-Roles:\
-Directors:Jonathan Glazer\
-Studios: Film4-British Film Institute (BFI-Silver Reel See\
-\
-Info:Night at the Museum: Secret of the Tomb-19 December 2014-English-true-USA-13\
-Genres:Adventure-Comedy-Family-Fantasy\
-Oscars:\
-Actors: Ben Stiller-Robin Williams-Owen Wilson \
-Roles:\
-Directors:Shawn Levy\
-Studios:Twentieth Century Fox Film Corporation-21 Laps Entertainment-1492 Pictures\
-\
-Info:Enemy - 6 February 2014- English-true-USA-16\
-Genres: Mystery-Thriller\
-Oscars:\
-Actors:Jake Gyllenhaal- Mélanie Laurent-Sarah Gadon\
-Roles:\
-Directors:Denis Villeneuve\
-Studios:Pathé International-Entertainment One-Rhombus Media\
-\
-Info:Ride Along-17 January 2014-English-true-USA-18\
-Genres: Action-Comedy-Crime-Romance\
-Oscars:\
-Actors: Ice Cube-Kevin Hart-Tika Sumpter \
-Roles:\
-Directors: Tim Story\
-Studios: Cube Vision-LBI Entertainment-Rainforest Films \
-\
-Info:Dawn of the Planet of the Apes -11 July 2014-English-true-USA-16\
-Genres: Action-Adventure-Drama-Sci-Fi\
-Oscars:\
-Actors:Gary Oldman-Keri Russell-Andy Serkis\
-Roles:\
-Directors: Matt Reeves\
-Studios:Chernin Entertainment-Ingenious Media-Soho VFX\
-\
-Info:The Interview-24 December 2014-English-true-USA-12\
-Genres: Comedy\
-Oscars:\
-Actors: James Franco-Seth Rogen-Randall Park\
-Roles:\
-Directors:Evan Goldberg-Seth Rogen\
-Studios: Columbia Pictures-LStar Capital-Point Grey Pictures\
-\
-Info:Lucy-25 July 2014-English-true-USA-18\
-Genres: Action-Sci-Fi-Thriller\
-Oscars:\
-Actors: Scarlett Johansson-Morgan Freeman-Min-sik Choi |\
-Roles:\
-Directors:Luc Besson\
-Studios:Canal+, Ciné+, EuropaCorp\
-\
-Info:The Loft-30 January 2015-English-true-USA-13\
-Genres:\
-Oscars:\
-Actors: Karl Urban-James Marsden-Wentworth Miller |\
-Roles:\
-Directors:Erik Van Looy\
-Studios: Open Road Films-De Vijver Media-Woestijnvis\
-\
-Info:Chef-30 May 2014-English-true-USA-13\
-Genres:Comedy-Drama\
-Oscars:\
-Actors: Jon Favreau-Robert Downey Jr.-Scarlett Johansson \
-Roles:\
-Directors:Jon Favreau\
-Studios: Aldamisa Entertainment-Kilburn Media \
-\
-Info: 300: Rise of an Empire-7 March 2014-English-true-USA-13\
-Genres: Action-Drama-Fantasy-War\
-Oscars:\
-Actors: Sullivan Stapleton-Eva Green-Lena Headey \
-Roles:\
-Directors:Noam Murro\
-Studios: Warner Bros-Legendary Pictures-Cruel & Unusual Films\
-\
-Info:The Fault in Our Stars-6 June 2014-English-true-USA-13\
-Genres:Drama-Romance\
-Oscars:\
-Actors: Shailene Woodley-Ansel Elgort-Nat Wolff \
-Roles:\
-Directors:Josh Boone\
-Studios:Fox 2000 Pictures-Temple Hill Entertainment-TSG Entertainment\
-\
-Info:The Hobbit: The Battle of the Five Armies-17 December 2014-English-true-USA-13\
-Genres:Adventure-Fantasy\
-Oscars:\
-Actors: Ian McKellen-Martin Freeman-Richard Armitage\
-Roles:\
-Directors:Peter Jackson\
-Studios: New Line Cinema-Metro-Goldwyn-Mayer (MGM)-WingNut Films\
-\
-Info:The Maze Runner-19 September 2014-English-false-USA-13\
-Genres: Action-Mystery-Sci-Fi-Thriller\
-Oscars:\
-Actors: Dylan O'Brien-Kaya Scodelario-Will Poulter\
-Roles:\
-Directors:Wes Ball\
-Studios: Twentieth Century Fox Film Corporation-Gotham Group-Temple Hill Entertainment\
-\
-Info:The Amazing Spider-Man 2-2 May 2014-English-true-USA-13\
-Genres:Action-Adventure-Fantasy-Sci-Fi\
-Oscars:\
-Actors:Andrew Garfield-Emma Stone-Jamie Foxx\
-Roles:\
-Directors:Marc Webb\
-Studios: Marvel Enterprises-Avi Arad Productions-Columbia Pictures\
-\
-Info:Guardians of the Galaxy-31 July 2014-English-true-USA-12\
-Genres:Action-Adventure-Science Fiction\
-Oscars:\
-Actors:Chris Pratt-Vin Diesel-Bradley Cooper-Zoe Saldana\
-Roles:Groot-Star Lord-Gamora-Rocket Raccoon-Thanos-Ronan the Accuser-Drax the Destroyer\
-Directors:James Gunn\
-Studios:Marvel Studios-Bulletproof Cupid-Marvel Enterprises\
-\
-Info:Interstellar-6 November 2014-English-true-USA-10\
-Genres:Adventure-Drama-Science Fiction\
-Oscars:Best Achievement in Visual Effects\
-Actors:Matthew McConaughey-Anne Hathaway-Jessica Chastain\
-Roles:\
-Directors:Christopher Nolan\
-Studios:Paramount Pictures-Warner Bros-Legendary Pictures\
-\
-Info:Divergent-17 April 2014-English-false-USA-14\
-Genres:Adventure-Mystery-Science Fiction\
-Oscars:\
-Actors:Shailene Woodley-Theo James-Kate Winslet\
-Roles:\
-Directors:Neil Burger\
-Studios:Summit Entertainment-Red Wagon Entertainment-Soho VFX\
-\
-Info:Divorce Corp-10 January 2014-English-true-USA-0\
-Genres:Documentary-Drama-History\
-Oscars:\
-Actors:Gloria Allred-Wndy Archer-Alexandra Borg\
-Roles:\
-Directors:Joseph Soorge\
-Studios:Candor Entertainment\
-\
-Info:If You Build It-6 April 2013-English-false-USA-0\
-Genres:Documentary\
-Oscars:\
-Actors:Erick Bowen-Rodecoe Dunlow-Kerron Hayes\
-Roles:\
-Directors:Patrick Creadon\
-Studios:O\'92Malley Creadon Productions\
-\
-Info:Banshee Chapter-12 December 2013-English-false-USA-18\
-Genres:Horror-Thriller\
-Oscars:\
-Actors:Katia Winter-Ted Levine-Michael McMillian\
-Roles:\
-Directors:Blair Erickson\
-Studios:Sunchaser Entertainment-Before The Door Pictures-Favorit Film\
-\
-Info:Raze-16 January 2014-English-false-USA-18\
-Genres:Action-Horror\
-Oscars:\
-Actors:Zoe Bell-Rachel Nichols-Tracie Thoms\
-Roles:\
-Directors:Josh C. Waller\
-Studios:Cinipix-Cosmic Toast Studios-Quincy Pictures\
-\
-Info:The Great Flood-8 January 2014-English-true-USA-0\
-Genres:Documentary-History-Music\
-Oscars:\
-Actors:\
-Roles:\
-Directors:Bill Morrison\
-Studios:Hypnotic Pictures\
-\
-Info:Paranormal Activity: The Marked Ones-10 January 2014-English-true-USA-16\
-Genres:Fantasy-Horror-Thriller\
-Oscars:\
-Actors:Andrew Jacobs-Jorge Diaz-Gabrielle Walsh\
-Roles:\
-Directors:Christopher Landon\
-Studios:Paramount Pictures-Blumhouse Productions-Solana Films\
-\
-Info:Open Grave-3 January 2014-English-false-USA-18\
-Genres:Horror-Mystery-Thriller\
-Oscars:\
-Actors:Sharlto Copley-Thomas Kretschmann-Josie Ho\
-Roles:\
-Directors:Gonzalo Lopez Gallego\
-Studios:Atlas Independent-852 Films-Fox Studio\
-\
-Info:The Best Offer-17 July 2014-English-false-Italy-18\
-Genres:Crime-Drama-Mystery\
-Oscars:\
-Actors:Geoffrey Rush-Jim Sturgess-Sylvia Hoeks\
-Roles:\
-Directors:Giuseppe Tornatore\
-Studios:Paco Cinematografica-Warner Bros\
-\
-Info:Beyond Outrage-6 October 2012-Japanese-true-Japan-18\
-Genres:Action-Crime-Drama\
-Oscars:\
-Actors:Toshiyuki Nishida-Tomokazy Miura-Takeshi Kitano\
-Roles:\
-Directors:Takeshi Kitano\
-Studios:Bandai Visual Company-TV Tokyo}
+Info:Let`s Be Cops-20140813-English-true-USA-18-Luke Greenfield
+Genres:Comedy
+Actors:Jake Johnson- Damon Wayans Jr-Bob Riggle
+Roles:
+Studios:Genre Films-Twentieth Century Fox Film Corporation-WideAwake
+
+Info:Little Boy-20150424-English-true-USA-18-Alejandro Monteverde
+Genres:War-Drama
+Actors:Jakob Salvati-Emily Watson-David Henrie
+Roles:
+Studios:Metanoia Films-Santa Fé Films
+
+Info:A Walk Among the Tombstones-20140910-English-false-USA-18-Scott Frank
+Genres:Crime-Drama-Mystery-Thriller
+Actors:Liam Neeson-Dan Stevens-David Harbour
+Roles:
+Studios:1984 Private Defense Contractors-Cross Creek Pictures-Da Vinci Media
+
+Info:Son of God-20140228-English-true-USA-13-Christopher Spencer
+Genres:Biography-Drama-History
+Actors:Diogo Morgado-Amber Rose Revah-Sebastian Knapp
+Roles:
+Studios:Hearst Entertainment Productions-LightWorkers Media
+
+Info:Non Stop-20140228-English-true-USA-13-Jaume Collet
+Genres:Action-Mystery-Thriller
+Actors:Liam Neeson-Julianne Moore-Scoot McNairy
+Roles:
+Studios:StudioCanal-Anton Capital Entertainment (ACE)-Silver Pictures
+
+Info:The Legend of Hercules-20140110-English-false-USA-13-Renny Harlin
+Genres:Action-Adventure-Fantasy
+Actors:Kellan Lutz-Gaia Weiss-Scott Adkins
+Roles:Hercules
+Studios:Millennium Films
+
+Info:RoboCop -20140212-English-true-USA-13-José Padilha
+Genres:Action-Science Fiction-Thriller
+Actors:Joel Kinnaman-Gary Oldman-Michael Keaton
+Roles:RoboCop
+Studios:Metro-Goldwyn-Mayer (MGM)-Columbia Pictures-Strike Entertainment
+
+Info:As Above, So Below-20140829-English-false-USA-18-John Erick Dowdle
+Genres:Horror-Mystery-Thriller
+Actors:Perdita Weeks-Ben Feldman-Edwin Hodge
+Roles:
+Studios:Legendary Pictures-Universal Pictures-Brothers Dowdle Productions
+
+Info:Oculus-20140411-English-true-USA-18-Mike Flanagan
+Genres:Horror
+Actors:Karen Gillan-Brenton Thwaites-Katee Sackhoff
+Roles:
+Studios:Relativity Media-Intrepid Pictures-MICA Entertainment
+
+Info:That Awkward Moment-20140131-English-false-USA-13-Tom Gormican
+Genres:Comedy-Romance
+Actors:Zac Efron-Michael B. Jordan-Miles Teller
+Roles:
+Studios:Treehouse Pictures-Aversano Films-What If It Barks Films
+
+Info:A Promise-20140416-English-true-France-13-Patrice Leconte
+Genres:Drama-Romance
+Actors:Rebecca Hall-Alan Rickman-Richard Madden
+Roles:
+Studios:Fidélité Films-Wild Bunch-Scope Pictures
+
+Info:Sex Tape-20140718-English-true-USA-18-Jake Kasdan
+Genres:Comedy
+Actors:Jason Segel-Cameron Diaz-Rob Corddry
+Roles:
+Studios:Escape Artists-LStar Capital-Media Rights Capital
+
+Info:What If-20140815-English-true-USA-13-Michael Dowse
+Genres:Comedy-Romance
+Actors:Daniel Radcliffe-Zoe Kazan-Megan Park
+Roles:
+Studios:No Trace Camping-Caramel Film-Fastnet Films
+
+Info:Under the Skin-20140314-English-true-UK-18-Jonathan Glazer
+Genres:Drama-Science Fiction-Thriller
+Actors:Scarlett Johansson-Jeremy McWilliams-Lynsey Taylor Mackay
+Roles:
+Studios:Film4-British Film Institute-Silver Reel See
+
+Info:Night at the Museum:Secret-20141219-English-true-USA-13-Shawn Levy
+Genres:Adventure-Comedy-Family-Fantasy
+Actors:Ben Stiller-Robin Williams-Owen Wilson
+Roles:
+Studios:Twentieth Century Fox Film Corporation-21 Laps Entertainment-1492 Pictures
+
+Info:Enemy-20140206-English-true-USA-16-Denis Villeneuve
+Genres:Mystery-Thriller
+Actors:Jake Gyllenhaal-Mélanie Laurent-Sarah Gadon
+Roles:
+Studios:Pathé International-Entertainment One-Rhombus Media
+
+Info:Ride Along-20140117-English-true-USA-18-Tim Story
+Genres:Action-Comedy-Crime-Romance
+Actors:Ice Cube-Kevin Hart-Tika Sumpter
+Roles:
+Studios:Cube Vision-LBI Entertainment-Rainforest Films
+
+Info:Dawn of the Planet of the Apes-20140711-English-true-USA-16-Matt Reeves
+Genres:Action-Adventure-Drama-Science Fiction
+Actors:Gary Oldman-Keri Russell-Andy Serkis
+Roles:
+Studios:Chernin Entertainment-Ingenious Media-Soho VFX
+
+Info:The Interview-20141224-English-true-USA-12-Evan Goldberg
+Genres:Comedy
+Actors:James Franco-Seth Rogen-Randall Park
+Roles:
+Studios:Columbia Pictures-LStar Capital-Point Grey Pictures
+
+Info:Lucy-20140725-English-true-USA-18-Luc Besson
+Genres:Action-Science Fiction-Thriller
+Actors:Scarlett Johansson-Morgan Freeman-Min-sik Choi
+Roles:
+Studios:Canal+-Ciné+-EuropaCorp
+
+Info:Captain America 2-20140410-English-true-USA-12-Anthony Russo
+Genres:Action-Adventure-Science Fiction
+Actors:Karl Urban-James Marsden-Wentworth Miller
+Roles:Captain America-Steve Rogers-Nick Fury-Black Widow-Natasha Romanoff-Winter Soldier-Falcon
+Studios:Marvel Entertainment-Marvel Studios
+
+Info:Chef-20140530-English-true-USA-13-Jon Favreau
+Genres:Comedy-Drama
+Actors:Jon Favreau-Robert Downey Jr.-Scarlett Johansson
+Roles:
+Studios:Aldamisa Entertainment-Kilburn Media
+
+Info:300:Rise of an Empire-20140307-English-true-USA-13-Noam Murro
+Genres:Action-Drama-Fantasy-War
+Actors:Sullivan Stapleton-Eva Green-Lena Headey
+Roles:
+Studios:Warner Bros-Legendary Pictures-Cruel & Unusual Films
+
+Info:The Fault in Our Stars-20140606-English-true-USA-13-Josh Boone
+Genres:Drama-Romance
+Actors:Shailene Woodley-Ansel Elgort-Nat Wolff
+Roles:
+Studios:Fox 2000 Pictures-Temple Hill Entertainment-TSG Entertainment
+
+Info:The Hobbit:The Battle-20141217-English-true-USA-13-Peter Jackson
+Genres:Adventure-Fantasy
+Actors:Ian McKellen-Martin Freeman-Richard Armitage
+Roles:Gandalf-Bilbo Baggins
+Studios:New Line Cinema-Metro-Goldwyn-Mayer (MGM)-WingNut Films
+
+Info:The Maze Runner-20140919-English-false-USA-13-Wes Ball
+Genres:Action-Mystery-Science Fiction-Thriller
+Actors:Dylan O`Brien-Kaya Scodelario-Will Poulter
+Roles:
+Studios:Twentieth Century Fox Film Corporation-Gotham Group-Temple Hill Entertainment
+
+Info:The Amazing Spider Man 2-20140502-English-true-USA-13-Marc Webb
+Genres:Action-Adventure-Fantasy-Science Fiction
+Actors:Andrew Garfield-Emma Stone-Jamie Foxx
+Roles:
+Studios:Marvel Enterprises-Avi Arad Productions-Columbia Pictures
+
+Info:Guardians of the Galaxy-20140731-English-true-USA-12-James Gunn
+Genres:Action-Adventure-Science Fiction
+Actors:Chris Pratt-Vin Diesel-Bradley Cooper-Zoe Saldana
+Roles:Groot-Star Lord-Gamora-Rocket Raccoon-Thanos-Ronan the Accuser-Drax the Destroyer
+Studios:Marvel Studios-Bulletproof Cupid-Marvel Enterprises
+
+Info:Interstellar-20141106-English-true-USA-10-Christopher Nolan
+Genres:Adventure-Drama-Science Fiction
+Actors:Matthew McConaughey-Anne Hathaway-Jessica Chastain
+Roles:
+Studios:Paramount Pictures-Warner Bros-Legendary Pictures
+
+Info:Divergent-20140417-English-false-USA-14-Neil Burger
+Genres:Adventure-Mystery-Science Fiction
+Actors:Shailene Woodley-Theo James-Kate Winslet
+Roles:
+Studios:Summit Entertainment-Red Wagon Entertainment-Soho VFX
+
+Info:Divorce Corp-20140110-English-true-USA-0-Joseph Soorge
+Genres:Documentary-Drama-History
+Actors:Gloria Allred-Wndy Archer-Alexandra Borg
+Roles:
+Studios:Candor Entertainment
+
+Info:If You Build It-20130406-English-false-USA-0-Patrick Creadon
+Genres:Documentary
+Actors:Erick Bowen-Rodecoe Dunlow-Kerron Hayes
+Roles:
+Studios:O`Malley Creadon Productions
+
+Info:Banshee Chapter-20131212-English-false-USA-18-Blair Erickson
+Genres:Horror-Thriller
+Actors:Katia Winter-Ted Levine-Michael McMillian
+Roles:
+Studios:Sunchaser Entertainment-Before The Door Pictures-Favorit Film
+
+Info:Raze-20140116-English-false-USA-18-Josh Waller
+Genres:Action-Horror
+Actors:Zoe Bell-Rachel Nichols-Tracie Thoms
+Roles:
+Studios:Cinipix-Cosmic Toast Studios-Quincy Pictures
+
+Info:The Great Flood-20140108-English-true-USA-0-Bill Morrison
+Genres:Documentary-History-Music
+Actors:
+Roles:
+Studios:Hypnotic Pictures
+
+Info:Paranormal Activity:The Marked Ones-20140110-English-true-USA-16-Christopher Landon
+Genres:Fantasy-Horror-Thriller
+Actors:Andrew Jacobs-Jorge Diaz-Gabrielle Walsh
+Roles:
+Studios:Paramount Pictures-Blumhouse Productions-Solana Films
+
+Info:Open Grave-20140103-English-false-USA-18-Gonzalo Lopez Gallego
+Genres:Horror-Mystery-Thriller
+Actors:Sharlto Copley-Thomas Kretschmann-Josie Ho
+Roles:
+Studios:Atlas Independent-852 Films-Fox Studio
+
+Info:The Best Offer-20140717-English-false-Italy-18-Giuseppe Tornatore
+Genres:Crime-Drama-Mystery
+Actors:Geoffrey Rush-Jim Sturgess-Sylvia Hoeks
+Roles:
+Studios:Paco Cinematografica-Warner Bros
+
+Info:Beyond Outrage-20121006-Japanese-true-Japan-18-Takeshi Kitano
+Genres:Action-Crime-Drama
+Actors:Toshiyuki Nishida-Tomokazy Miura-Takeshi Kitano
+Roles:
+Studios:Bandai Visual Company-TV Tokyo
