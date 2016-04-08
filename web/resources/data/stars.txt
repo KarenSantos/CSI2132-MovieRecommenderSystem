@@ -6,32 +6,32 @@
 
 lastname:Thwaites
 firstname:Brenton
-dbo:August 10 1989
+dbo:19890810 
 country:Australia
 
 lastname:Cooke 
 firstname:Olivia
-dbo:December 27 1993
+dbo:19931227 
 country:England
 
 lastname:Knapp
 firstname:Beau
-dbo:April 17 1989
+dbo:19890417
 country:America
 
 lastname:Johnson
 firstname:Jake
-dbo:May 28 1978
+dbo:19780528
 country:America
 
 lastname:Wayans
 firstname:Damon
-dbo:November 18 1982
+dbo:19821118
 country:America
 
 lastname:Riggle
 firstname:Bob
-dbo:April 21 1970
+dbo:19700421
 country:America
 
 lastname:Salvati
@@ -41,16 +41,81 @@ country:America
 
 lastname:Watson
 firstname:Emily
-dbo:14 January 1967
+dbo:19670114
 country:England
 
 lastname:Henrie
 firstname:David
-dbo:11 July 1989 
+dbo:19890711 
 country:America
 
-lastname:
-firstname:
+lastname: Neeson-Dan
+firstname:Liam
+dbo:19520607
+country:N.Ireland
+
+lastname:Stevens
+firstname:Dan
+dbo:19821010
+country:England
+
+lastname:Harbour
+firstname:David
+dbo:19740410
+country:America
+
+lastname:Morgano
+firstname:Diogo
+dbo:19810117
+country:America
+
+lastname:Revah
+firstname:Amber
+dbo:19860624
+country:England
+
+lastname:Knapp
+firstname:Sevastian
+dbo:
+country:Britain
+
+lastname:Neeson
+firstname:Liam
+dbo:19520607
+country:N.Ireland
+
+lastname:Moore 
+firstname:Julian
+dbo:19601203
+country:America
+
+lastname:McNairy
+firstname:Scott
+dbo:19771111
+country:America
+
+lastname:Lutz
+firstname:Kellian
+dbo:19850315
+country:American
+
+lastname:Weiss
+firstname:Gaia
+dbo:19910830
+country:France
+
+lastname:Adkins
+firstname:Scott
+dbo:19760617
+country:England
+
+lastname:Kinamman
+firstname:Joel
+dbo:19791125
+country:Sweeden
+
+lastname:Oldman
+firstname:Gary
 dbo:
 country:
 
@@ -69,7 +134,10 @@ firstname:
 dbo:
 country:
 
-
+lastname:
+firstname:
+dbo:
+country:
 
 
 
