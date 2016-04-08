@@ -339,10 +339,25 @@ firstname:Sullivan
 dbo:19770614
 country:Australia
 
-lastname:
-firstname:
-dbo:
-country:
+lastname:Green
+firstname:Eva
+dbo:19800706
+country:France
+
+lastname:Headey
+firstname:Lena
+dbo:19731003
+country:England
+
+lastname:Woodley
+firstname:Shailene
+dbo:19911115
+country:America
+
+lastname:Elgort
+firstname:Ansel
+dbo:19940414
+country:America
 
 lastname:
 firstname:
@@ -364,10 +379,42 @@ firstname:
 dbo:
 country:
 
+
 lastname:
 firstname:
 dbo:
 country:
 
+lastname:
+firstname:
+dbo:
+country:
+
+
+lastname:
+firstname:
+dbo:
+country:
+
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
+dbo:
+country:
 
 }
