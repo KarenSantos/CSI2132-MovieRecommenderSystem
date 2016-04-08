@@ -116,6 +116,36 @@ country:Sweeden
 
 lastname:Oldman
 firstname:Gary
+dbo:19580321
+country:England
+
+lastname:Keaton
+firstname:Michael
+dbo:19510905
+country:America
+
+lastname:Weeks
+firstname:Perdita
+dbo:19851225
+country:England
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
+dbo:
+country:
+
+lastname:
+firstname:
 dbo:
 country:
 
@@ -138,8 +168,6 @@ lastname:
 firstname:
 dbo:
 country:
-
-
 
 
 
