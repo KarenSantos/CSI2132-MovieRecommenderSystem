@@ -1,43 +1,37 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
-
 lastname:Thwaites
 firstname:Brenton
-dbo:19890810 
+dbo:19890810
 country:Australia
 
-lastname:Cooke 
+lastname:Cooke
 firstname:Olivia
-dbo:19931227 
+dbo:19931227
 country:England
 
 lastname:Knapp
 firstname:Beau
 dbo:19890417
-country:America
+country:USA
 
 lastname:Johnson
 firstname:Jake
 dbo:19780528
-country:America
+country:USA
 
 lastname:Wayans
 firstname:Damon
 dbo:19821118
-country:America
+country:USA
 
 lastname:Riggle
 firstname:Bob
 dbo:19700421
-country:America
+country:USA
 
 lastname:Salvati
 firstname:Jakob
 dbo:
-country:America
+country:USA
 
 lastname:Watson
 firstname:Emily
@@ -46,13 +40,13 @@ country:England
 
 lastname:Henrie
 firstname:David
-dbo:19890711 
-country:America
+dbo:19890711
+country:USA
 
-lastname: Neeson-Dan
+lastname:Neeson-Dan
 firstname:Liam
 dbo:19520607
-country:N.Ireland
+country:Northern Ireland
 
 lastname:Stevens
 firstname:Dan
@@ -62,12 +56,12 @@ country:England
 lastname:Harbour
 firstname:David
 dbo:19740410
-country:America
+country:USA
 
 lastname:Morgano
 firstname:Diogo
 dbo:19810117
-country:America
+country:USA
 
 lastname:Revah
 firstname:Amber
@@ -82,22 +76,22 @@ country:Britain
 lastname:Neeson
 firstname:Liam
 dbo:19520607
-country:N.Ireland
+country:Northern Ireland
 
-lastname:Moore 
+lastname:Moore
 firstname:Julian
 dbo:19601203
-country:America
+country:USA
 
 lastname:McNairy
 firstname:Scott
 dbo:19771111
-country:America
+country:USA
 
 lastname:Lutz
 firstname:Kellian
 dbo:19850315
-country:American
+country:USA
 
 lastname:Weiss
 firstname:Gaia
@@ -122,7 +116,7 @@ country:England
 lastname:Keaton
 firstname:Michael
 dbo:19510905
-country:America
+country:USA
 
 lastname:Weeks
 firstname:Perdita
@@ -132,12 +126,12 @@ country:England
 lastname:Ben
 firstname:Feldman
 dbo:19800527
-country:America
+country:USA
 
 lastname:Hodge
 firstname:Edwin
 dbo:19850126
-country:America
+country:USA
 
 lastname:Gillan
 firstname:Karen
@@ -147,27 +141,27 @@ country:Scotland
 lastname:Sackhoff
 firstname:Katee
 dbo:19800408
-country:America
+country:USA
 
 lastname:Efron
 firstname:Zac
 dbo:1987108
-country:America
+country:USA
 
 lastname:Jordan-B
 firstname:Michael
 dbo:19870209
-country:America
+country:USA
 
 lastname:Teller
 firstname:Miles
 dbo:19870220
-country:America
+country:USA
 
 lastname:Hall
 firstname:Rebecca
 dbo:19820503
-country:America
+country:USA
 
 lastname:Rickman
 firstname:Alan
@@ -182,17 +176,17 @@ country:Scotland
 lastname:
 firstname:
 dbo:19800118
-country:America
+country:USA
 
 lastname:Diaz
 firstname:Cameron
 dbo:19720830
-country:America
+country:USA
 
 lastname:Corddry
 firstname:Rob
 dbo:19710204
-country:America
+country:USA
 
 lastname:Radcliffe
 firstname:Daniel
@@ -202,47 +196,47 @@ country:England
 lastname:Kazan
 firstname:Zoe
 dbo:19830909
-country:America
+country:USA
 
 lastname:Megan
 firstname:Park
 dbo:19860724
 country:Canada
 
-lastname:Johansson 
+lastname:Johansson
 firstname:Scarlett
 dbo:19841122
-country:America
+country:USA
 
 lastname:McWilliams
 firstname:Jeremy
 dbo:19640404
-country:N.Ireland
+country:Northern Ireland
 
 lastname:Mackay
 firstname:Lynsay
 dbo:
-country:America
+country:USA
 
 lastname:Stiller
 firstname:Ben
 dbo:19651130
-country:America
+country:USA
 
 lastname:Williams
 firstname:Robin
 dbo:19510721
-country:America
+country:USA
 
 lastname:Wilson
 firstname:Owen
 dbo:19681118
-country:America
+country:USA
 
-lastname:Gyllenhaal 
+lastname:Gyllenhaal
 firstname:Jake
 dbo:19801219
-country:America
+country:USA
 
 lastname:Melanie
 firstname:Lauren
@@ -257,19 +251,19 @@ country:Canada
 lastname:Cube
 firstname:Ice
 dbo:19690615
-country:America
+country:USA
 
 lastname:Hart
 firstname:Kevin
 dbo:19790706
-country:America
+country:USA
 
 lastname:Sumpter
 firstname:Tika
 dbo:19800620
-country:America
+country:USA
 
-lastname:Oldman 
+lastname:Oldman
 firstname:Gary
 dbo:19580321
 country:England
@@ -277,7 +271,7 @@ country:England
 lastname:Russell
 firstname:Keri
 dbo:19760323
-country:America
+country:USA
 
 lastname:Serkis
 firstname:Andy
@@ -287,7 +281,7 @@ country:England
 lastname:Franco
 firstname:James
 dbo:19780419
-country:America
+country:USA
 
 lastname:Rogen
 firstname:Seth
@@ -297,42 +291,42 @@ country:Canada
 lastname:Randall
 firstname:Park
 dbo:19740323
-country:America
+country:USA
 
 lastname:Freeman
 firstname:Morgan
 dbo:19370601
-country:America
+country:USA
 
 lastname:Min-Sik
 firstname:Choi
 dbo:19620427
-country:S.Korea
+country:South Korea
 
 lastname:Urban
 firstname:Karl
 dbo:19720607
-country:New-Zealand
+country:New Zealand
 
 lastname:Marsden
 firstname:James
 dbo:19730918
-country:America
+country:USA
 
 lastname:Wentworth
 firstname:Miller
 dbo:19720602
-country:America
+country:USA
 
 lastname:Favreau
 firstname:Jon
 dbo:19810602
-country:America
+country:USA
 
 lastname:Downey
 firstname:Robert
 dbo:19650404
-country:America
+country:USA
 
 lastname:Stapleton
 firstname:Sullivan
@@ -352,17 +346,17 @@ country:England
 lastname:Woodley
 firstname:Shailene
 dbo:19911115
-country:America
+country:USA
 
 lastname:Elgort
 firstname:Ansel
 dbo:19940414
-country:America
+country:USA
 
 lastname:Wolff
 firstname:Nat
 dbo:19941217
-country:America
+country:USA
 
 lastname:McKellen
 firstname:Ian
@@ -382,7 +376,7 @@ country:England
 lastname:O'Brien
 firstname:Dylan
 dbo:19910826
-country:America
+country:USA
 
 lastname:Scodelaria
 firstname:Kaya
@@ -397,52 +391,52 @@ country:England
 lastname:Garfield
 firstname:Andrew
 dbo:19830820
-country:America
+country:USA
 
 lastname:Stone
 firstname:Emma
 dbo:19881106
-country:America
+country:USA
 
 lastname:Foxx
 firstname:Jamie
 dbo:19671213
-country:America
+country:USA
 
 lastname:Pratt
 firstname:Chris
 dbo:19790621
-country:America
+country:USA
 
 lastname:Diesel
 firstname:Vin
 dbo:19670718
-country:America
+country:USA
 
 lastname:Cooper
 firstname:Bradley
 dbo:19750105
-country:America
+country:USA
 
 lastname:Saldana
 firstname:Zoe
 dbo:19780619
-country:America
+country:USA
 
 lastname:McConaughey
 firstname:Matthew
 dbo:19691104
-country:America
+country:USA
 
 lastname:Hathaway
 firstname:Anne
 dbo:19821112
-country:America
+country:USA
 
 lastname:Chastain
 firstname:Jessica
 dbo:19770324
-country:America
+country:USA
 
 lastname:James
 firstname:Theo
@@ -457,12 +451,12 @@ country:England
 lastname:Allred
 firstname:Gloria
 dbo:19410703
-country:America
+country:USA
 
 lastname:Borg
 firstname:Alexandra
 dbo:19970714
-country:America
+country:USA
 
 lastname:Winter
 firstname:Katia
@@ -472,57 +466,57 @@ country:Sweeden
 lastname:Levine
 firstname:Ted
 dbo:19750529
-country:America
+country:USA
 
 lastname:Michael
 firstname:McMillian
 dbo:19781021
-country:America
+country:USA
 
 lastname:Bell
 firstname:Zoe
 dbo:19781117
-country:New-Zealdn
+country:New Zeland
 
 lastname:Nichols
 firstname:Rachel
 dbo:19800108
-country:America
+country:USA
 
 lastname:Thoms
 firstname:Tracie
 dbo:19750819
-country:America
+country:USA
 
 lastname:Jacobs
 firstname:Andrew
 dbo:19320224
-country:America
+country:USA
 
 lastname:Diaz
 firstname:Jorge
 dbo:19830822
-country:America
+country:USA
 
 lastname:Walsh
 firstname:Gabrielle
 dbo:19880510
-country:America
+country:USA
 
 lastname:Copley
 firstname:Sharlo
 dbo:19731127
-country:South-Africa
+country:South Africa
 
 lastname:Kretschmann
 firstname:Thomas
 dbo:19620908
-country:America
+country:USA
 
 lastname:Ho
 firstname:Josie
 dbo:19741226
-country:Hong-Kong
+country:Hong Kong
 
 lastname:Rush
 firstname:Geoffrey
@@ -553,5 +547,3 @@ lastname:Kitano
 firstname:Takeshi
 dbo:19470118
 country:Japan
-
-}

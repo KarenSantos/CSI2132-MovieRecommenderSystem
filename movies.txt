@@ -1,0 +1,319 @@
+Info:
+Genres:
+Oscars:
+Actors:
+Roles:
+Directors:
+Studios:
+
+Info:
+Genres:
+Oscars:
+Actors:
+Roles:
+Directors:
+Studios:
+
+Info:
+Genres:
+Oscars:
+Actors:
+Roles:
+Directors:
+Studios:
+
+Info:
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:\
+Genres:\
+Oscars:\
+Actors:\
+Roles:\
+Directors:\
+Studios:\
+\
+Info:Guardians of the Galaxy-31 July 2014-English-true-USA-12
+Genres:Action-Adventure-Science Fiction
+Oscars:
+Actors:Chris Pratt-Vin Diesel-Bradley Cooper-Zoe Saldana
+Roles:Groot-Star Lord-Gamora-Rocket Raccoon-Thanos-Ronan the Accuser-Drax the Destroyer
+Directors:James Gunn
+Studios:Marvel Studios-Bulletproof Cupid-Marvel Enterprises
+\
+Info:Interstellar-6 November 2014-English-true-USA-10
+Genres:Adventure-Drama-Science Fiction
+Oscars:Best Achievement in Visual Effects
+Actors:Matthew McConaughey-Anne Hathaway-Jessica Chastain
+Roles:
+Directors:Christopher Nolan
+Studios:Paramount Pictures-Warner Bros-Legendary Pictures
+\
+Info:Divergent-17 April 2014-English-false-USA-14
+Genres:Adventure-Mystery-Science Fiction
+Oscars:
+Actors:Shailene Woodley-Theo James-Kate Winslet
+Roles:
+Directors:Neil Burger
+Studios:Summit Entertainment-Red Wagon Entertainment-Soho VFX
+\
+Info:Divorce Corp-10 January 2014-English-true-USA-0
+Genres:Documentary-Drama-History
+Oscars:
+Actors:Gloria Allred-Wndy Archer-Alexandra Borg
+Roles:
+Directors:Joseph Sorge
+Studios:Candor Entertainment
+\
+Info:If You Build It-6 April 2013-English-false-USA-0
+Genres:Documentary
+Oscars:
+Actors:Erick Bowen-Rodecoe Dunlow-Kerron Hayes
+Roles:
+Directors:Patrick Creadon
+Studios:O'Malley Creadon Productions
+\
+Info:Banshee Chapter-12 December 2013-English-false-USA-18
+Genres:Horror-Thriller
+Oscars:
+Actors:Katia Winter-Ted Levine-Michael McMillian
+Roles:
+Directors:Blair Erickson
+Studios:Sunchaser Entertainment-Before The Door Pictures-Favorit Film
+\
+Info:Raze-16 January 2014-English-false-USA-18
+Genres:Action-Horror
+Oscars:
+Actors:Zoe Bell-Rachel Nichols-Tracie Thoms
+Roles:
+Directors:Josh C. Waller
+Studios:Cinipix-Cosmic Toast Studios-Quincy Pictures
+\
+Info:The Great Flood-8 January 2014-English-true-USA-0
+Genres:Documentary-History-Music
+Oscars:
+Actors:
+Roles:
+Directors:Bill Morrison
+Studios:Hypnotic Pictures
+\
+Info:Paranormal Activity: The Marked Ones-10 January 2014-English-true-USA-16
+Genres:Fantasy-Horror-Thriller
+Oscars:
+Actors:Andrew Jacobs-Jorge Diaz-Gabrielle Walsh
+Roles:
+Directors:Christopher Landon
+Studios:Paramount Pictures-Blumhouse Productions-Solana Films
+\
+Info:Open Grave-3 January 2014-English-false-USA-18
+Genres:Horror-Mystery-Thriller
+Oscars:
+Actors:Sharlto Copley-Thomas Kretschmann-Josie Ho
+Roles:
+Directors:Gonzalo Lopez Gallego
+Studios:Atlas Independent-852 Films-Fox Studio
+\
+Info:The Best Offer-17 July 2014-English-false-Italy-18
+Genres:Crime-Drama-Mystery
+Oscars:
+Actors:Geoffrey Rush-Jim Sturgess-Sylvia Hoeks
+Roles:
+Directors:Giuseppe Tornatore
+Studios:Paco Cinematografica-Warner Bros
+\
+Info:Beyond Outrage-6 October 2012-Japanese-true-Japan-18
+Genres:Action-Crime-Drama
+Oscars:
+Actors:Toshiyuki Nishida-Tomokazy Miura-Takeshi Kitano
+Roles:
+Directors:Takeshi Kitano
+Studios:Bandai Visual Company-TV Tokyo

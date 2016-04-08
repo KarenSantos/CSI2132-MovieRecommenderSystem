@@ -108,4 +108,12 @@ public class UserAccount {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "UserAccount{" + userID + ", " + password + ", " 
+                + lastName + ", " + firstName + ", " + email + ", " + city + ", " + province + ", " + country + '}';
+    }
+    
+    
+
 }

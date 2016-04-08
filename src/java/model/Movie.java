@@ -11,16 +11,17 @@ public class Movie {
     
     private String movieID;
     private String name;
-    private Calendar dateReleased;
+    private String dateReleased;
     private String language;
     private boolean subtitled;
     private String country;
     private int ageRestriction;
+    private String directorID;
     
     public Movie(){}
     
-    public Movie(String movieID, String name, Calendar dateReleased, 
-            String language, boolean hasSubtitles, String country, int ageRestriction){
+    public Movie(String movieID, String name, String dateReleased, String language, 
+            boolean hasSubtitles, String country, int ageRestriction, String directorID){
         this.movieID = movieID;
         this.name = name;
         this.dateReleased = dateReleased;
@@ -28,6 +29,7 @@ public class Movie {
         this.subtitled = hasSubtitles;
         this.country = country;
         this.ageRestriction = ageRestriction;
+        this.directorID = directorID;
     }
 
     public String getMovieID() {
@@ -46,11 +48,11 @@ public class Movie {
         this.name = name;
     }
 
-    public Calendar getDateReleased() {
+    public String getDateReleased() {
         return dateReleased;
     }
 
-    public void setDateReleased(Calendar dateReleased) {
+    public void setDateReleased(String dateReleased) {
         this.dateReleased = dateReleased;
     }
 
@@ -85,6 +87,14 @@ public class Movie {
     public void setAgeRestriction(int ageRestriction) {
         this.ageRestriction = ageRestriction;
     }
+
+    public String getDirectorID() {
+        return directorID;
+    }
+
+    public void setDirectorID(String directorID) {
+        this.directorID = directorID;
+    }
     
     @Override
     public boolean equals(Object obj) {
@@ -98,4 +108,12 @@ public class Movie {
         }
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" + movieID + ", " + name + ", " + dateReleased + ", " + language 
+                + ", " + subtitled + ", " + country + ", " + ageRestriction + "}";
+    }
+    
+    
 }

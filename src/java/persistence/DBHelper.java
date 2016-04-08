@@ -8,8 +8,6 @@ package persistence;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,7 +71,7 @@ public class DBHelper {
     
     public void insertUser(UserAccount user) throws SQLException{
 
-        int totalrows = connection.getTotalRows("UserAccount");
+        int totalrows = getTotalRows("UserAccount");
         
         String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
         String password = "'" + user.getPassword() +"',";
@@ -94,10 +92,8 @@ public class DBHelper {
         connection.selectAllFrom(rs, "Movie");
         
         while (rs.next()) {
-            Calendar c = new GregorianCalendar();
-            c.setTime(rs.getDate(3));
-            Movie m = new Movie(rs.getString(1), rs.getString(2), c, rs.getString(4), 
-                    rs.getBoolean(5), rs.getString(6), rs.getInt(7));
+            Movie m = new Movie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), 
+                    rs.getBoolean(5), rs.getString(6), rs.getInt(7), rs.getString(8));
             movies.add(m);
         }
         rs.close();
@@ -105,15 +101,22 @@ public class DBHelper {
     }
     
     public void insertMovie(Movie movie) throws SQLException{
-        String id = "'" + createID(FIVE_CHARAC, connection.getTotalRows("Movie")) + "',";
+        int totalrows = getTotalRows("Movie");
+        
+        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
         String name = "'" + movie.getName() +"',";
-        String date = "'" + movie.getDateReleased().get(Calendar.YEAR) 
-                + (movie.getDateReleased().get(Calendar.MONTH) + 1) + movie.getDateReleased().get(Calendar.DAY_OF_MONTH) + "',";
+        String date = "'" + movie.getDateReleased() + "',";
         String language = "'" + movie.getLanguage() + "',";
         String country =  ",'" + movie.getCountry() + "',";
+        String directorID = ",'" + movie.getDirectorID() + "'";
         
-        String movieInfo = id + name + date + language + movie.isSubtitled() + country + movie.getAgeRestriction();
+        String movieInfo = id + name + date + language + movie.isSubtitled() 
+                + country + movie.getAgeRestriction() + directorID;
         connection.insertValue("Movie", movieInfo);
+    }
+    
+    public int getTotalRows(String table) throws SQLException{
+        return connection.getTotalRows(table);
     }
     
     private String createID(int numberOfCharacters, int totalEntries){
