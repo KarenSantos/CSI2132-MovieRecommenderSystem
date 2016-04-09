@@ -40,13 +40,13 @@ Actors:Kellan Lutz-Gaia Weiss-Scott Adkins
 Roles:Hercules
 Studios:Millennium Films
 
-Info:RoboCop -20140212-English-true-USA-13-José Padilha
+Info:RoboCop-20140212-English-true-USA-13-Jose Padilha
 Genres:Action-Science Fiction-Thriller
 Actors:Joel Kinnaman-Gary Oldman-Michael Keaton
 Roles:RoboCop
 Studios:Metro-Goldwyn-Mayer (MGM)-Columbia Pictures-Strike Entertainment
 
-Info:As Above, So Below-20140829-English-false-USA-18-John Erick Dowdle
+Info:As Above, So Below-20140829-English-false-USA-18-John Dowdle
 Genres:Horror-Mystery-Thriller
 Actors:Perdita Weeks-Ben Feldman-Edwin Hodge
 Roles:
@@ -220,7 +220,7 @@ Actors:Andrew Jacobs-Jorge Diaz-Gabrielle Walsh
 Roles:
 Studios:Paramount Pictures-Blumhouse Productions-Solana Films
 
-Info:Open Grave-20140103-English-false-USA-18-Gonzalo Lopez Gallego
+Info:Open Grave-20140103-English-false-USA-18-Gonzalo Gallego
 Genres:Horror-Mystery-Thriller
 Actors:Sharlto Copley-Thomas Kretschmann-Josie Ho
 Roles:

@@ -18,11 +18,12 @@ import model.*;
  * @author karensantos
  */
 public class DBHelper {
-    
+
     private final int FIVE_CHARAC = 5;
-    
+    private final int THREE_CHARAC = 3;
+
     private DBConnection connection;
-    
+
     public DBHelper() {
         try {
             connection = new DBConnection();
@@ -34,27 +35,27 @@ public class DBHelper {
             Logger.getLogger(DBHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public List<UserAccount> selectAllUsers() throws SQLException{
+
+    public List<UserAccount> selectAllUsers() throws SQLException {
         List<UserAccount> users = new ArrayList<>();
         ResultSet rs = null;
         connection.selectAllFrom(rs, "User");
-        
+
         while (rs.next()) {
             UserAccount u = new UserAccount(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-                                rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
+                    rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
             users.add(u);
         }
         rs.close();
         return users;
     }
-    
-    public UserAccount selectUserByEmail(String email) throws SQLException{
+
+    public UserAccount selectUserByEmail(String email) throws SQLException {
         ResultSet rs = null;
         rs = connection.selectAllFromWhere(rs, "UserAccount", "email= '" + email + "'");
-        
+
         UserAccount user = null;
-        if (rs.next()){
+        if (rs.next()) {
             String id = rs.getString(1);
             String password = rs.getString(2);
             String lastName = rs.getString(3);
@@ -63,71 +64,101 @@ public class DBHelper {
             String province = rs.getString(7);
             String country = rs.getString(8);
             user = new UserAccount(id, password, lastName, firstName, email, city, province, country);
-        } 
+        }
         rs.close();
         connection.closeStatement();
         return user;
     }
-    
-    public void insertUser(UserAccount user) throws SQLException{
+
+    public void insertUser(UserAccount user) throws SQLException {
 
         int totalrows = getTotalRows("UserAccount");
-        
+
         String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
-        String password = "'" + user.getPassword() +"',";
-        String lastName = "'" + user.getLastName() +"',";
-        String firstName = "'" + user.getFirstName() +"',";
+        String password = "'" + user.getPassword() + "',";
+        String lastName = "'" + user.getLastName() + "',";
+        String firstName = "'" + user.getFirstName() + "',";
         String email = "'" + user.getEmail() + "',";
         String city = "'" + user.getCity() + "',";
         String province = "'" + user.getProvince() + "',";
-        String country =  "'" + user.getCountry() + "'";
-        
+        String country = "'" + user.getCountry() + "'";
+
         String userInfo = id + password + lastName + firstName + email + city + province + country;
         connection.insertValue("UserAccount", userInfo);
     }
-    
-    public List<Movie> selectAllMovies() throws SQLException{
+
+    public List<Movie> selectAllMovies() throws SQLException {
         List<Movie> movies = new ArrayList<>();
         ResultSet rs = null;
         connection.selectAllFrom(rs, "Movie");
-        
+
         while (rs.next()) {
-            Movie m = new Movie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), 
+            Movie m = new Movie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
                     rs.getBoolean(5), rs.getString(6), rs.getInt(7), rs.getString(8));
             movies.add(m);
         }
         rs.close();
         return movies;
     }
-    
-    public void insertMovie(Movie movie) throws SQLException{
+
+    public void insertMovie(Movie movie) throws SQLException {
         int totalrows = getTotalRows("Movie");
-        
+
         String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
-        String name = "'" + movie.getName() +"',";
+        String name = "'" + movie.getName() + "',";
         String date = "'" + movie.getDateReleased() + "',";
         String language = "'" + movie.getLanguage() + "',";
-        String country =  ",'" + movie.getCountry() + "',";
+        String country = ",'" + movie.getCountry() + "',";
         String directorID = ",'" + movie.getDirectorID() + "'";
-        
-        String movieInfo = id + name + date + language + movie.isSubtitled() 
+
+        String movieInfo = id + name + date + language + movie.isSubtitled()
                 + country + movie.getAgeRestriction() + directorID;
         connection.insertValue("Movie", movieInfo);
     }
-    
-    public int getTotalRows(String table) throws SQLException{
-        return connection.getTotalRows(table);
+
+    public List<Director> selectAllDirectors() throws SQLException {
+        List<Director> directors = new ArrayList<>();
+        ResultSet rs = null;
+        connection.selectAllFrom(rs, "Director");
+
+        while (rs.next()) {
+            Director d = new Director(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+            directors.add(d);
+        }
+        rs.close();
+        return directors;
+    }
+
+    public void insertDirector(Director dir) throws SQLException {
+        int totalrows = getTotalRows("Director");
+
+        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String lastName = "'" + dir.getLastName() + "',";
+        String firstName = "'" + dir.getFirstName() + "',";
+        String country = "'" + dir.getCountry() + "'";
+
+        String dirInfo = id + lastName + firstName + country;
+        connection.insertValue("Director", dirInfo);
     }
     
-    private String createID(int numberOfCharacters, int totalEntries){
+    public String selectIDFromWhereEquals(String table, String columns[], String attributes[]) throws SQLException, Exception{
+        String id = connection.selectIDFromWhereEquals(table, columns, attributes);
+        return id;
+    }
+
+    public int getTotalRows(String table) throws SQLException {
+        return connection.getTotalRows(table);
+    }
+
+    private String createID(int numberOfCharacters, int totalEntries) {
         String id = "";
         String idNumber = "" + (totalEntries + 1);
         int numberOfZeros = numberOfCharacters - (idNumber.length());
-        for (int i = 0; i < numberOfZeros; i++){
+        for (int i = 0; i < numberOfZeros; i++) {
             id += "0";
         }
         id += idNumber;
         return id;
     }
-    
+
 }

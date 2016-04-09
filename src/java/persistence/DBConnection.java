@@ -68,9 +68,41 @@ public class DBConnection {
         st = db.createStatement();
 
         String insert = "INSERT INTO " + schema + "." + table + " VALUES (" + values + ");";
-        System.out.println(insert);
         st.executeUpdate(insert);
         st.close();
+    }
+    
+    /**
+     * Returns the id of an entry in a particular table, where the specified
+     * attributes are equal to specified values.
+     * @param table The table to get the entry from.
+     * @param columns The array of all the names of the columns to compare.
+     * @param attributes The array of values of the attributes for the specified columns.
+     * @return Returns the id of the entry or null if there is no match.
+     * @throws SQLException
+     * @throws Exception if the arrays have different lengths.
+     */
+    public String selectIDFromWhereEquals(String table, String columns[], String attributes[]) throws SQLException, Exception{
+        st = db.createStatement();
+        String id = null;
+        String conditions = "";
+        if (columns.length!=attributes.length) throw new Exception();
+        for (int i = 0; i < columns.length; i++){
+            if (i == columns.length-1){
+                conditions += table + "." + columns[i] + "=" + attributes[i];
+            } else {
+                conditions += table + "." + columns[i] + "=" + attributes[i] + " AND "; 
+            }
+        }
+        String query = "SELECT " + table + "_id FROM " + schema + "." + table + " WHERE " + conditions + ";";
+        System.out.println(query);
+        ResultSet rs = st.executeQuery(query);
+        if (rs.next()){
+            id = rs.getString(1);
+        }
+        rs.close();
+        st.close();
+        return id;
     }
 
     public int getTotalRows(String table) throws SQLException {

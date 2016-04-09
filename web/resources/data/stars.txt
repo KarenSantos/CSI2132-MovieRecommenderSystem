@@ -476,7 +476,7 @@ country:USA
 lastname:Bell
 firstname:Zoe
 dbo:19781117
-country:New Zeland
+country:New Zealand
 
 lastname:Nichols
 firstname:Rachel
