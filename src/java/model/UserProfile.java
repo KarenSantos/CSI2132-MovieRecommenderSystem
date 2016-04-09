@@ -7,16 +7,16 @@ import java.util.Calendar;
  *
  * @author karensantos
  */
-public class Profile {
+public class UserProfile {
     
     private String userID;
-    private Calendar DBO;
+    private String DBO;
     private String gender;
     private String occupation;
     
-    public Profile(){}
+    public UserProfile(){}
     
-    public Profile(String userID, Calendar DBO, String gender, String occupation){
+    public UserProfile(String userID, String DBO, String gender, String occupation){
         this.userID = userID;
         this.DBO = DBO;
         this.gender = gender;
@@ -31,11 +31,11 @@ public class Profile {
         this.userID = userID;
     }
 
-    public Calendar getDBO() {
+    public String getDBO() {
         return DBO;
     }
 
-    public void setDBO(Calendar DBO) {
+    public void setDBO(String DBO) {
         this.DBO = DBO;
     }
 
@@ -60,7 +60,7 @@ public class Profile {
         boolean result = false;
         if (obj != null) {
             if (this.getClass() == obj.getClass()) {
-                if (this.getUserID().equals(((Profile) obj).getUserID())) {
+                if (this.getUserID().equals(((UserProfile) obj).getUserID())) {
                     result = true;
                 }
             }

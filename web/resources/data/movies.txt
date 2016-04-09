@@ -44,7 +44,7 @@ Info:RoboCop-20140212-English-true-USA-13-Jose Padilha
 Genres:Action-Science Fiction-Thriller
 Actors:Joel Kinnaman-Gary Oldman-Michael Keaton
 Roles:RoboCop
-Studios:Metro-Goldwyn-Mayer (MGM)-Columbia Pictures-Strike Entertainment
+Studios:Metro Goldwyn Mayer (MGM)-Columbia Pictures-Strike Entertainment
 
 Info:As Above, So Below-20140829-English-false-USA-18-John Dowdle
 Genres:Horror-Mystery-Thriller
@@ -84,7 +84,7 @@ Studios:No Trace Camping-Caramel Film-Fastnet Films
 
 Info:Under the Skin-20140314-English-true-UK-18-Jonathan Glazer
 Genres:Drama-Science Fiction-Thriller
-Actors:Scarlett Johansson-Jeremy McWilliams-Lynsey Taylor Mackay
+Actors:Scarlett Johansson-Jeremy McWilliams-Lynsey Mackay
 Roles:
 Studios:Film4-British Film Institute-Silver Reel See
 
@@ -132,7 +132,7 @@ Studios:Marvel Entertainment-Marvel Studios
 
 Info:Chef-20140530-English-true-USA-13-Jon Favreau
 Genres:Comedy-Drama
-Actors:Jon Favreau-Robert Downey Jr.-Scarlett Johansson
+Actors:Jon Favreau-Robert DowneyJr.-Scarlett Johansson
 Roles:
 Studios:Aldamisa Entertainment-Kilburn Media
 

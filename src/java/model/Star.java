@@ -7,31 +7,31 @@ import java.util.Calendar;
  *
  * @author karensantos
  */
-public class Actor {
+public class Star {
     
-    private String actorID;
+    private String starID;
     private String lastName;
     private String firstName;
-    private Calendar DBO;
+    private String DBO;
     private String country;
     
-    public Actor(){}
+    public Star(){}
     
-    public Actor(String actorID, String lastName, String firstName, 
-            Calendar DBO, String country){
-        this.actorID = actorID;
+    public Star(String starID, String lastName, String firstName, 
+            String DBO, String country){
+        this.starID = starID;
         this.lastName = lastName;
         this.firstName = firstName;
         this.DBO = DBO;
         this.country = country;
     }
 
-    public String getActorID() {
-        return actorID;
+    public String getStarID() {
+        return starID;
     }
 
-    public void setActorID(String actorID) {
-        this.actorID = actorID;
+    public void setStarID(String actorID) {
+        this.starID = actorID;
     }
 
     public String getLastName() {
@@ -50,11 +50,11 @@ public class Actor {
         this.firstName = firstName;
     }
 
-    public Calendar getDBO() {
+    public String getDBO() {
         return DBO;
     }
 
-    public void setDBO(Calendar DBO) {
+    public void setDBO(String DBO) {
         this.DBO = DBO;
     }
 
@@ -71,7 +71,7 @@ public class Actor {
         boolean result = false;
         if (obj != null) {
             if (this.getClass() == obj.getClass()) {
-                if (this.getActorID().equals(((Actor) obj).getActorID())) {
+                if (this.getStarID().equals(((Star) obj).getStarID())) {
                     result = true;
                 }
             }

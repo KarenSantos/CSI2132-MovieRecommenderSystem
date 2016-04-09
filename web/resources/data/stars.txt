@@ -30,7 +30,7 @@ country:USA
 
 lastname:Salvati
 firstname:Jakob
-dbo:
+dbo:20030615
 country:USA
 
 lastname:Watson
@@ -69,8 +69,8 @@ dbo:19860624
 country:England
 
 lastname:Knapp
-firstname:Sevastian
-dbo:
+firstname:Sebastian
+dbo:19700804
 country:Britain
 
 lastname:Neeson
@@ -145,7 +145,7 @@ country:USA
 
 lastname:Efron
 firstname:Zac
-dbo:1987108
+dbo:19871008
 country:USA
 
 lastname:Jordan-B
@@ -173,8 +173,8 @@ firstname:Richard
 dbo:19860618
 country:Scotland
 
-lastname:
-firstname:
+lastname:Segel
+firstname:Jason
 dbo:19800118
 country:USA
 
@@ -214,8 +214,8 @@ dbo:19640404
 country:Northern Ireland
 
 lastname:Mackay
-firstname:Lynsay
-dbo:
+firstname:Lynsey
+dbo:19850923
 country:USA
 
 lastname:Stiller
@@ -323,7 +323,7 @@ firstname:Jon
 dbo:19810602
 country:USA
 
-lastname:Downey
+lastname:DowneyJr.
 firstname:Robert
 dbo:19650404
 country:USA
@@ -373,7 +373,7 @@ firstname:Richard
 dbo:19710822
 country:England
 
-lastname:O'Brien
+lastname:O`Brien
 firstname:Dylan
 dbo:19910826
 country:USA

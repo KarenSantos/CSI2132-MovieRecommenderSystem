@@ -39,7 +39,7 @@ public class DBHelper {
     public List<UserAccount> selectAllUsers() throws SQLException {
         List<UserAccount> users = new ArrayList<>();
         ResultSet rs = null;
-        connection.selectAllFrom(rs, "User");
+        connection.selectAllFrom(rs, "user_account");
 
         while (rs.next()) {
             UserAccount u = new UserAccount(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
@@ -47,12 +47,13 @@ public class DBHelper {
             users.add(u);
         }
         rs.close();
+        connection.closeStatement();
         return users;
     }
 
     public UserAccount selectUserByEmail(String email) throws SQLException {
         ResultSet rs = null;
-        rs = connection.selectAllFromWhere(rs, "UserAccount", "email= '" + email + "'");
+        rs = connection.selectAllFromWhere(rs, "user_account", "email= '" + email + "'");
 
         UserAccount user = null;
         if (rs.next()) {
@@ -70,11 +71,12 @@ public class DBHelper {
         return user;
     }
 
-    public void insertUser(UserAccount user) throws SQLException {
+    public String insertUser(UserAccount user) throws SQLException {
 
-        int totalrows = getTotalRows("UserAccount");
-
-        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
+        int totalrows = getTotalRows("user_account");
+        String id = createID(FIVE_CHARAC, totalrows);
+        
+        String userID = "'" + id + "',";
         String password = "'" + user.getPassword() + "',";
         String lastName = "'" + user.getLastName() + "',";
         String firstName = "'" + user.getFirstName() + "',";
@@ -83,14 +85,15 @@ public class DBHelper {
         String province = "'" + user.getProvince() + "',";
         String country = "'" + user.getCountry() + "'";
 
-        String userInfo = id + password + lastName + firstName + email + city + province + country;
-        connection.insertValue("UserAccount", userInfo);
+        String userInfo = userID + password + lastName + firstName + email + city + province + country;
+        connection.insertValue("user_account", userInfo);
+        return id;
     }
 
     public List<Movie> selectAllMovies() throws SQLException {
         List<Movie> movies = new ArrayList<>();
         ResultSet rs = null;
-        connection.selectAllFrom(rs, "Movie");
+        connection.selectAllFrom(rs, "movie");
 
         while (rs.next()) {
             Movie m = new Movie(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
@@ -98,11 +101,12 @@ public class DBHelper {
             movies.add(m);
         }
         rs.close();
+        connection.closeStatement();
         return movies;
     }
 
     public void insertMovie(Movie movie) throws SQLException {
-        int totalrows = getTotalRows("Movie");
+        int totalrows = getTotalRows("movie");
 
         String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
         String name = "'" + movie.getName() + "',";
@@ -113,24 +117,25 @@ public class DBHelper {
 
         String movieInfo = id + name + date + language + movie.isSubtitled()
                 + country + movie.getAgeRestriction() + directorID;
-        connection.insertValue("Movie", movieInfo);
+        connection.insertValue("movie", movieInfo);
     }
 
     public List<Director> selectAllDirectors() throws SQLException {
         List<Director> directors = new ArrayList<>();
         ResultSet rs = null;
-        connection.selectAllFrom(rs, "Director");
+        connection.selectAllFrom(rs, "director");
 
         while (rs.next()) {
             Director d = new Director(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
             directors.add(d);
         }
         rs.close();
+        connection.closeStatement();
         return directors;
     }
 
     public void insertDirector(Director dir) throws SQLException {
-        int totalrows = getTotalRows("Director");
+        int totalrows = getTotalRows("director");
 
         String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
         String lastName = "'" + dir.getLastName() + "',";
@@ -138,10 +143,137 @@ public class DBHelper {
         String country = "'" + dir.getCountry() + "'";
 
         String dirInfo = id + lastName + firstName + country;
-        connection.insertValue("Director", dirInfo);
+        connection.insertValue("director", dirInfo);
     }
-    
-    public String selectIDFromWhereEquals(String table, String columns[], String attributes[]) throws SQLException, Exception{
+
+    public List<Star> selectAllStars() throws SQLException {
+        List<Star> stars = new ArrayList<>();
+        ResultSet rs = null;
+        connection.selectAllFrom(rs, "star");
+
+        while (rs.next()) {
+            Star s = new Star(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+            stars.add(s);
+        }
+        rs.close();
+        connection.closeStatement();
+        return stars;
+    }
+
+    public void insertStar(Star star) throws SQLException {
+        int totalrows = getTotalRows("star");
+
+        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
+        String lastName = "'" + star.getLastName() + "',";
+        String firstName = "'" + star.getFirstName() + "',";
+        String DBO = "'" + star.getDBO() + "',";
+        String country = "'" + star.getCountry() + "'";
+
+        String starInfo = id + lastName + firstName + DBO + country;
+        connection.insertValue("star", starInfo);
+    }
+
+    public List<Role> selectAllRoles() throws SQLException {
+        List<Role> roles = new ArrayList<>();
+        ResultSet rs = null;
+        connection.selectAllFrom(rs, "role");
+
+        while (rs.next()) {
+            Role r = new Role(rs.getString(1), rs.getString(2));
+            roles.add(r);
+        }
+        rs.close();
+        connection.closeStatement();
+        return roles;
+    }
+
+    public void insertRole(Role role) throws SQLException {
+        int totalrows = getTotalRows("role");
+
+        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String name = "'" + role.getName() + "'";
+
+        String roleInfo = id + name;
+        connection.insertValue("role", roleInfo);
+    }
+
+    public List<Genre> selectAllGenres() throws SQLException {
+        List<Genre> genres = new ArrayList<>();
+        ResultSet rs = null;
+        connection.selectAllFrom(rs, "genre");
+
+        while (rs.next()) {
+            Genre g = new Genre(rs.getString(1), rs.getString(2));
+            genres.add(g);
+        }
+        rs.close();
+        connection.closeStatement();
+        return genres;
+    }
+
+    public void insertGenre(Genre genre) throws SQLException {
+        int totalrows = getTotalRows("genre");
+
+        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String name = "'" + genre.getName() + "'";
+
+        String genreInfo = id + name;
+        connection.insertValue("genre", genreInfo);
+    }
+
+    public List<Studio> selectAllStudios() throws SQLException {
+        List<Studio> studios = new ArrayList<>();
+        ResultSet rs = null;
+        connection.selectAllFrom(rs, "studio");
+
+        while (rs.next()) {
+            Studio s = new Studio(rs.getString(1), rs.getString(2), rs.getString(3));
+            studios.add(s);
+        }
+        rs.close();
+        connection.closeStatement();
+        return studios;
+    }
+
+    public void insertStudio(Studio studio) throws SQLException {
+        int totalrows = getTotalRows("studio");
+
+        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String name = "'" + studio.getName() + "',";
+        String country = "'" + studio.getCountry() + "'";
+
+        String studioInfo = id + name + country;
+        connection.insertValue("studio", studioInfo);
+    }
+
+    public UserProfile selectProfileByID(String id) throws SQLException {
+        ResultSet rs = null;
+        rs = connection.selectAllFromWhere(rs, "user_profile", "user_id= '" + id + "'");
+
+        UserProfile profile = null;
+        if (rs.next()) {
+            String DBO = rs.getString(1);
+            String gender = rs.getString(2);
+            String occupation = rs.getString(3);
+            profile = new UserProfile(id, DBO, gender, occupation);
+        }
+        rs.close();
+        connection.closeStatement();
+        return profile;
+    }
+
+    public void insertProfile(UserProfile profile) throws SQLException {
+
+        String id = "'" + profile.getUserID() + "',";
+        String DBO = "'" + profile.getDBO() + "',";
+        String gender = "'" + profile.getGender() + "',";
+        String occupation = "'" + profile.getOccupation() + "'";
+
+        String profileInfo = id + DBO + gender + occupation;
+        connection.insertValue("user_profile", profileInfo);
+    }
+
+    public String selectIDFromWhereEquals(String table, String columns[], String attributes[]) throws SQLException, Exception {
         String id = connection.selectIDFromWhereEquals(table, columns, attributes);
         return id;
     }

@@ -95,7 +95,6 @@ public class DBConnection {
             }
         }
         String query = "SELECT " + table + "_id FROM " + schema + "." + table + " WHERE " + conditions + ";";
-        System.out.println(query);
         ResultSet rs = st.executeQuery(query);
         if (rs.next()){
             id = rs.getString(1);
