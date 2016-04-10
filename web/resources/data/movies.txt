@@ -6,7 +6,7 @@ Studios:Automatik Entertainment-Low Spark Films-Signal Film Group
 
 Info:Let`s Be Cops-20140813-English-true-USA-18-Luke Greenfield
 Genres:Comedy
-Actors:Jake Johnson- Damon Wayans Jr-Bob Riggle
+Actors:Jake Johnson-Damon WayansJr.-Bob Riggle
 Roles:
 Studios:Genre Films-Twentieth Century Fox Film Corporation-WideAwake
 
@@ -24,13 +24,13 @@ Studios:1984 Private Defense Contractors-Cross Creek Pictures-Da Vinci Media
 
 Info:Son of God-20140228-English-true-USA-13-Christopher Spencer
 Genres:Biography-Drama-History
-Actors:Diogo Morgado-Amber Rose Revah-Sebastian Knapp
+Actors:Diogo Morgado-Amber Revah-Sebastian Knapp
 Roles:
 Studios:Hearst Entertainment Productions-LightWorkers Media
 
 Info:Non Stop-20140228-English-true-USA-13-Jaume Collet
 Genres:Action-Mystery-Thriller
-Actors:Liam Neeson-Julianne Moore-Scoot McNairy
+Actors:Liam Neeson-Julianne Moore-Scott McNairy
 Roles:
 Studios:StudioCanal-Anton Capital Entertainment (ACE)-Silver Pictures
 
@@ -60,7 +60,7 @@ Studios:Relativity Media-Intrepid Pictures-MICA Entertainment
 
 Info:That Awkward Moment-20140131-English-false-USA-13-Tom Gormican
 Genres:Comedy-Romance
-Actors:Zac Efron-Michael B. Jordan-Miles Teller
+Actors:Zac Efron-Michael B.Jordan-Miles Teller
 Roles:
 Studios:Treehouse Pictures-Aversano Films-What If It Barks Films
 
@@ -96,7 +96,7 @@ Studios:Twentieth Century Fox Film Corporation-21 Laps Entertainment-1492 Pictur
 
 Info:Enemy-20140206-English-true-USA-16-Denis Villeneuve
 Genres:Mystery-Thriller
-Actors:Jake Gyllenhaal-Mélanie Laurent-Sarah Gadon
+Actors:Jake Gyllenhaal-Melanie Laurent-Sarah Gadon
 Roles:
 Studios:Pathé International-Entertainment One-Rhombus Media
 
@@ -120,13 +120,13 @@ Studios:Columbia Pictures-LStar Capital-Point Grey Pictures
 
 Info:Lucy-20140725-English-true-USA-18-Luc Besson
 Genres:Action-Science Fiction-Thriller
-Actors:Scarlett Johansson-Morgan Freeman-Min-sik Choi
+Actors:Scarlett Johansson-Morgan Freeman-Minsik Choi
 Roles:
 Studios:Canal+-Ciné+-EuropaCorp
 
 Info:Captain America 2-20140410-English-true-USA-12-Anthony Russo
 Genres:Action-Adventure-Science Fiction
-Actors:Karl Urban-James Marsden-Wentworth Miller
+Actors:Chris Evans-Samuel L.Jackson-Scarlett Johansson-Sebastian Stan-Anthony Mackie
 Roles:Captain America-Steve Rogers-Nick Fury-Black Widow-Natasha Romanoff-Winter Soldier-Falcon
 Studios:Marvel Entertainment-Marvel Studios
 
@@ -152,7 +152,7 @@ Info:The Hobbit:The Battle-20141217-English-true-USA-13-Peter Jackson
 Genres:Adventure-Fantasy
 Actors:Ian McKellen-Martin Freeman-Richard Armitage
 Roles:Gandalf-Bilbo Baggins
-Studios:New Line Cinema-Metro-Goldwyn-Mayer (MGM)-WingNut Films
+Studios:New Line Cinema-Metro Goldwyn Mayer (MGM)-WingNut Films
 
 Info:The Maze Runner-20140919-English-false-USA-13-Wes Ball
 Genres:Action-Mystery-Science Fiction-Thriller
@@ -169,7 +169,7 @@ Studios:Marvel Enterprises-Avi Arad Productions-Columbia Pictures
 Info:Guardians of the Galaxy-20140731-English-true-USA-12-James Gunn
 Genres:Action-Adventure-Science Fiction
 Actors:Chris Pratt-Vin Diesel-Bradley Cooper-Zoe Saldana
-Roles:Groot-Star Lord-Gamora-Rocket Raccoon-Thanos-Ronan the Accuser-Drax the Destroyer
+Roles:Peter Quill-Groot-Star Lord-Gamora-Rocket Raccoon
 Studios:Marvel Studios-Bulletproof Cupid-Marvel Enterprises
 
 Info:Interstellar-20141106-English-true-USA-10-Christopher Nolan
@@ -186,13 +186,13 @@ Studios:Summit Entertainment-Red Wagon Entertainment-Soho VFX
 
 Info:Divorce Corp-20140110-English-true-USA-0-Joseph Soorge
 Genres:Documentary-Drama-History
-Actors:Gloria Allred-Wndy Archer-Alexandra Borg
+Actors:Gloria Allred
 Roles:
 Studios:Candor Entertainment
 
 Info:If You Build It-20130406-English-false-USA-0-Patrick Creadon
 Genres:Documentary
-Actors:Erick Bowen-Rodecoe Dunlow-Kerron Hayes
+Actors:Erick Bowen
 Roles:
 Studios:O`Malley Creadon Productions
 

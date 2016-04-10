@@ -9,6 +9,8 @@ import java.util.Calendar;
  */
 public class Star {
     
+    private final int DATE_LENGTH = 8;
+    
     private String starID;
     private String lastName;
     private String firstName;
@@ -18,11 +20,11 @@ public class Star {
     public Star(){}
     
     public Star(String starID, String lastName, String firstName, 
-            String DBO, String country){
+            String DBO, String country) throws Exception{
         this.starID = starID;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.DBO = DBO;
+        setDBO(DBO);
         this.country = country;
     }
 
@@ -54,7 +56,8 @@ public class Star {
         return DBO;
     }
 
-    public void setDBO(String DBO) {
+    public void setDBO(String DBO) throws Exception {
+        if (DBO.length() != DATE_LENGTH) throw new Exception();
         this.DBO = DBO;
     }
 

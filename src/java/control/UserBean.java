@@ -118,7 +118,7 @@ public class UserBean implements Serializable {
                     encryptedPW = ps.encrypt(password);
                     UserAccount user = new UserAccount("", encryptedPW, lastName, firstName, email, city, province, country);
                     try {
-                        DBHelper.insertUser(user);
+                        DBHelper.insertUserAccount(user);
                         addingStatus = "User profile created successfully";
                     } catch (SQLException ex) {
                         addingStatus = "Error while creating user account. Try again later.";

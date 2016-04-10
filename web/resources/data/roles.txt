@@ -10,9 +10,7 @@ Falcon
 Gandalf
 Bilbo Baggins
 Groot
+Peter Quill
 Star Lord
 Gamora
 Rocket Raccoon
-Thanos
-Ronan the Accuser
-Drax the Destroyer

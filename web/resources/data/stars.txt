@@ -18,7 +18,7 @@ firstname:Jake
 dbo:19780528
 country:USA
 
-lastname:Wayans
+lastname:WayansJr.
 firstname:Damon
 dbo:19821118
 country:USA
@@ -58,7 +58,7 @@ firstname:David
 dbo:19740410
 country:USA
 
-lastname:Morgano
+lastname:Morgado
 firstname:Diogo
 dbo:19810117
 country:USA
@@ -79,7 +79,7 @@ dbo:19520607
 country:Northern Ireland
 
 lastname:Moore
-firstname:Julian
+firstname:Julianne
 dbo:19601203
 country:USA
 
@@ -89,7 +89,7 @@ dbo:19771111
 country:USA
 
 lastname:Lutz
-firstname:Kellian
+firstname:Kellan
 dbo:19850315
 country:USA
 
@@ -103,15 +103,10 @@ firstname:Scott
 dbo:19760617
 country:England
 
-lastname:Kinamman
+lastname:Kinnaman
 firstname:Joel
 dbo:19791125
 country:Sweeden
-
-lastname:Oldman
-firstname:Gary
-dbo:19580321
-country:England
 
 lastname:Keaton
 firstname:Michael
@@ -123,8 +118,8 @@ firstname:Perdita
 dbo:19851225
 country:England
 
-lastname:Ben
-firstname:Feldman
+lastname:Feldman
+firstname:Ben
 dbo:19800527
 country:USA
 
@@ -148,7 +143,7 @@ firstname:Zac
 dbo:19871008
 country:USA
 
-lastname:Jordan-B
+lastname:B.Jordan
 firstname:Michael
 dbo:19870209
 country:USA
@@ -198,15 +193,10 @@ firstname:Zoe
 dbo:19830909
 country:USA
 
-lastname:Megan
-firstname:Park
+lastname:Park
+firstname:Megan
 dbo:19860724
 country:Canada
-
-lastname:Johansson
-firstname:Scarlett
-dbo:19841122
-country:USA
 
 lastname:McWilliams
 firstname:Jeremy
@@ -238,8 +228,8 @@ firstname:Jake
 dbo:19801219
 country:USA
 
-lastname:Melanie
-firstname:Lauren
+lastname:Laurent
+firstname:Melanie
 dbo:19830321
 country:France
 
@@ -288,8 +278,8 @@ firstname:Seth
 dbo:19820415
 country:Canada
 
-lastname:Randall
-firstname:Park
+lastname:Park
+firstname:Randall
 dbo:19740323
 country:USA
 
@@ -298,24 +288,34 @@ firstname:Morgan
 dbo:19370601
 country:USA
 
-lastname:Min-Sik
-firstname:Choi
+lastname:Choi
+firstname:Minsik
 dbo:19620427
 country:South Korea
 
-lastname:Urban
-firstname:Karl
-dbo:19720607
-country:New Zealand
-
-lastname:Marsden
-firstname:James
-dbo:19730918
+lastname:Evans
+firstname:Chris
+dbo:19810613
 country:USA
 
-lastname:Wentworth
-firstname:Miller
-dbo:19720602
+lastname:L.Jackson
+firstname:Samuel
+dbo:19481221
+country:USA
+
+lastname:Johansson
+firstname:Scarlett
+dbo:19841122
+country:USA
+
+lastname:Stan
+firstname:Sebastian
+dbo:19820813
+country:Romania
+
+lastname:Mackie
+firstname:Anthony
+dbo:19780923
 country:USA
 
 lastname:Favreau
@@ -378,7 +378,7 @@ firstname:Dylan
 dbo:19910826
 country:USA
 
-lastname:Scodelaria
+lastname:Scodelario
 firstname:Kaya
 dbo:19920313
 country:England
@@ -453,11 +453,6 @@ firstname:Gloria
 dbo:19410703
 country:USA
 
-lastname:Borg
-firstname:Alexandra
-dbo:19970714
-country:USA
-
 lastname:Winter
 firstname:Katia
 dbo:19831013
@@ -468,8 +463,8 @@ firstname:Ted
 dbo:19750529
 country:USA
 
-lastname:Michael
-firstname:McMillian
+lastname:McMillian
+firstname:Michael
 dbo:19781021
 country:USA
 
@@ -504,9 +499,14 @@ dbo:19880510
 country:USA
 
 lastname:Copley
-firstname:Sharlo
+firstname:Sharlto
 dbo:19731127
 country:South Africa
+
+lastname:Bowen
+firstname:Erick
+dbo:19700413
+country:USA
 
 lastname:Kretschmann
 firstname:Thomas

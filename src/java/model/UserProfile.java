@@ -8,7 +8,9 @@ import java.util.Calendar;
  * @author karensantos
  */
 public class UserProfile {
-    
+
+    private final int DATE_LENGTH = 8;
+
     private String userID;
     private String DBO;
     private String gender;
@@ -16,9 +18,9 @@ public class UserProfile {
     
     public UserProfile(){}
     
-    public UserProfile(String userID, String DBO, String gender, String occupation){
+    public UserProfile(String userID, String DBO, String gender, String occupation) throws Exception{
         this.userID = userID;
-        this.DBO = DBO;
+        this.setDBO(DBO);
         this.gender = gender;
         this.occupation = occupation;
     }
@@ -35,7 +37,8 @@ public class UserProfile {
         return DBO;
     }
 
-    public void setDBO(String DBO) {
+    public void setDBO(String DBO) throws Exception {
+        if (DBO.length() != DATE_LENGTH) throw new Exception();
         this.DBO = DBO;
     }
 

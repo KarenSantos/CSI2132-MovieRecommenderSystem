@@ -12,6 +12,7 @@ public class DBConnection {
     private final String url = "jdbc:postgresql://web0.site.uottawa.ca:15432/kdeal089";
     private final String username = "kdeal089";
     private final String password = "";
+    
     private Connection db;
     private Statement st;
 
@@ -70,6 +71,20 @@ public class DBConnection {
         String insert = "INSERT INTO " + schema + "." + table + " VALUES (" + values + ");";
         st.executeUpdate(insert);
         st.close();
+    }
+    
+    public String selectIDFromWhereEquals(String table, String column, String attribute) throws SQLException {
+        st = db.createStatement();
+        String id = null;
+        String condition = column + "=" + attribute;
+        String query = "SELECT " + table + "_id FROM " + schema + "." + table + " WHERE " + condition + ";";
+        ResultSet rs = st.executeQuery(query);
+        if (rs.next()){
+            id = rs.getString(1);
+        }
+        rs.close();
+        st.close();
+        return id;
     }
     
     /**

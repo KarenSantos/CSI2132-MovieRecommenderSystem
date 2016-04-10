@@ -9,6 +9,8 @@ import java.util.Calendar;
  */
 public class Movie {
     
+    private final int DATE_LENGTH = 8;
+    
     private String movieID;
     private String name;
     private String dateReleased;
@@ -21,10 +23,10 @@ public class Movie {
     public Movie(){}
     
     public Movie(String movieID, String name, String dateReleased, String language, 
-            boolean hasSubtitles, String country, int ageRestriction, String directorID){
+            boolean hasSubtitles, String country, int ageRestriction, String directorID) throws Exception{
         this.movieID = movieID;
         this.name = name;
-        this.dateReleased = dateReleased;
+        this.setDateReleased(dateReleased);
         this.language = language;
         this.subtitled = hasSubtitles;
         this.country = country;
@@ -52,7 +54,8 @@ public class Movie {
         return dateReleased;
     }
 
-    public void setDateReleased(String dateReleased) {
+    public void setDateReleased(String dateReleased) throws Exception {
+        if (dateReleased.length() != DATE_LENGTH) throw new Exception();
         this.dateReleased = dateReleased;
     }
 

@@ -71,11 +71,11 @@ public class DBHelper {
         return user;
     }
 
-    public String insertUser(UserAccount user) throws SQLException {
+    public String insertUserAccount(UserAccount user) throws SQLException {
 
         int totalrows = getTotalRows("user_account");
         String id = createID(FIVE_CHARAC, totalrows);
-        
+
         String userID = "'" + id + "',";
         String password = "'" + user.getPassword() + "',";
         String lastName = "'" + user.getLastName() + "',";
@@ -90,7 +90,7 @@ public class DBHelper {
         return id;
     }
 
-    public List<Movie> selectAllMovies() throws SQLException {
+    public List<Movie> selectAllMovies() throws SQLException, Exception {
         List<Movie> movies = new ArrayList<>();
         ResultSet rs = null;
         connection.selectAllFrom(rs, "movie");
@@ -105,19 +105,41 @@ public class DBHelper {
         return movies;
     }
 
-    public void insertMovie(Movie movie) throws SQLException {
+    public String insertMovie(Movie movie) throws SQLException {
         int totalrows = getTotalRows("movie");
+        String id = createID(FIVE_CHARAC, totalrows);
 
-        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
+        String movieID = "'" + id + "',";
         String name = "'" + movie.getName() + "',";
         String date = "'" + movie.getDateReleased() + "',";
         String language = "'" + movie.getLanguage() + "',";
         String country = ",'" + movie.getCountry() + "',";
         String directorID = ",'" + movie.getDirectorID() + "'";
 
-        String movieInfo = id + name + date + language + movie.isSubtitled()
+        String movieInfo = movieID + name + date + language + movie.isSubtitled()
                 + country + movie.getAgeRestriction() + directorID;
         connection.insertValue("movie", movieInfo);
+        return id;
+    }
+    
+    public void insertMovieGenre(String movieID, String genreID) throws SQLException{
+        String movieGenreInfo = "'" + movieID + "','" + genreID + "'";
+        connection.insertValue("movie_genre", movieGenreInfo);
+    }
+    
+    public void insertMovieRole(String movieID, String roleID) throws SQLException{
+        String movieRoleInfo = "'" + movieID + "','" + roleID + "'";
+        connection.insertValue("movie_role", movieRoleInfo);
+    }
+    
+    public void insertMovieStar(String movieID, String starID) throws SQLException{
+        String movieStarInfo = "'" + movieID + "','" + starID + "'";
+        connection.insertValue("movie_star", movieStarInfo);
+    }
+    
+    public void insertMovieStudio(String movieID, String studioID) throws SQLException{
+        String movieStudioInfo = "'" + movieID + "','" + studioID + "'";
+        connection.insertValue("movie_studio", movieStudioInfo);
     }
 
     public List<Director> selectAllDirectors() throws SQLException {
@@ -134,19 +156,21 @@ public class DBHelper {
         return directors;
     }
 
-    public void insertDirector(Director dir) throws SQLException {
+    public String insertDirector(Director dir) throws SQLException {
         int totalrows = getTotalRows("director");
+        String id = createID(THREE_CHARAC, totalrows);
 
-        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String directorID = "'" + id + "',";
         String lastName = "'" + dir.getLastName() + "',";
         String firstName = "'" + dir.getFirstName() + "',";
         String country = "'" + dir.getCountry() + "'";
 
-        String dirInfo = id + lastName + firstName + country;
+        String dirInfo = directorID + lastName + firstName + country;
         connection.insertValue("director", dirInfo);
+        return id;
     }
 
-    public List<Star> selectAllStars() throws SQLException {
+    public List<Star> selectAllStars() throws SQLException, Exception {
         List<Star> stars = new ArrayList<>();
         ResultSet rs = null;
         connection.selectAllFrom(rs, "star");
@@ -160,17 +184,19 @@ public class DBHelper {
         return stars;
     }
 
-    public void insertStar(Star star) throws SQLException {
+    public String insertStar(Star star) throws SQLException {
         int totalrows = getTotalRows("star");
-
-        String id = "'" + createID(FIVE_CHARAC, totalrows) + "',";
+        String id = createID(FIVE_CHARAC, totalrows);
+        
+        String starID = "'" + id + "',";
         String lastName = "'" + star.getLastName() + "',";
         String firstName = "'" + star.getFirstName() + "',";
         String DBO = "'" + star.getDBO() + "',";
         String country = "'" + star.getCountry() + "'";
 
-        String starInfo = id + lastName + firstName + DBO + country;
+        String starInfo = starID + lastName + firstName + DBO + country;
         connection.insertValue("star", starInfo);
+        return id;
     }
 
     public List<Role> selectAllRoles() throws SQLException {
@@ -187,14 +213,16 @@ public class DBHelper {
         return roles;
     }
 
-    public void insertRole(Role role) throws SQLException {
+    public String insertRole(Role role) throws SQLException {
         int totalrows = getTotalRows("role");
+        String id = createID(THREE_CHARAC, totalrows);
 
-        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String roleID = "'" + id + "',";
         String name = "'" + role.getName() + "'";
 
-        String roleInfo = id + name;
+        String roleInfo = roleID + name;
         connection.insertValue("role", roleInfo);
+        return id;
     }
 
     public List<Genre> selectAllGenres() throws SQLException {
@@ -211,14 +239,16 @@ public class DBHelper {
         return genres;
     }
 
-    public void insertGenre(Genre genre) throws SQLException {
+    public String insertGenre(Genre genre) throws SQLException {
         int totalrows = getTotalRows("genre");
+        String id = createID(THREE_CHARAC, totalrows);
 
-        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String genreID = "'" + id + "',";
         String name = "'" + genre.getName() + "'";
 
-        String genreInfo = id + name;
+        String genreInfo = genreID + name;
         connection.insertValue("genre", genreInfo);
+        return id;
     }
 
     public List<Studio> selectAllStudios() throws SQLException {
@@ -235,18 +265,20 @@ public class DBHelper {
         return studios;
     }
 
-    public void insertStudio(Studio studio) throws SQLException {
+    public String insertStudio(Studio studio) throws SQLException {
         int totalrows = getTotalRows("studio");
+        String id = createID(THREE_CHARAC, totalrows);
 
-        String id = "'" + createID(THREE_CHARAC, totalrows) + "',";
+        String studioID = "'" + id + "',";
         String name = "'" + studio.getName() + "',";
         String country = "'" + studio.getCountry() + "'";
 
-        String studioInfo = id + name + country;
+        String studioInfo = studioID + name + country;
         connection.insertValue("studio", studioInfo);
+        return id;
     }
 
-    public UserProfile selectProfileByID(String id) throws SQLException {
+    public UserProfile selectProfileByID(String id) throws SQLException, Exception {
         ResultSet rs = null;
         rs = connection.selectAllFromWhere(rs, "user_profile", "user_id= '" + id + "'");
 
@@ -262,7 +294,7 @@ public class DBHelper {
         return profile;
     }
 
-    public void insertProfile(UserProfile profile) throws SQLException {
+    public String insertUserProfile(UserProfile profile) throws SQLException {
 
         String id = "'" + profile.getUserID() + "',";
         String DBO = "'" + profile.getDBO() + "',";
@@ -271,6 +303,33 @@ public class DBHelper {
 
         String profileInfo = id + DBO + gender + occupation;
         connection.insertValue("user_profile", profileInfo);
+        return profile.getUserID();
+    }
+
+    public void insertStarRole(String starID, String roleID) throws SQLException {
+        String starRoleInfo = "'" + starID + "','" + roleID + "'";
+        connection.insertValue("star_role", starRoleInfo);
+    }
+
+    public void insertUserLikesGenre(String userID, String genreID) throws SQLException {
+        String userGenreInfo = "'" + userID + "','" + genreID + "'";
+        connection.insertValue("user_likes_genre", userGenreInfo);
+    }
+    
+    public void insertUserWatchedMovie(String userID, String movieID, String date) throws SQLException {
+        String userWatchedMovie = "'" + userID + "','" + movieID + "','" + date + "'";
+        connection.insertValue("user_watched_movie", userWatchedMovie);
+    }
+    
+    public void insertUserRatesMovie(String userID, String moveiID, int rating) throws SQLException, Exception {
+        if (rating < 1 || rating > 5) throw new Exception();
+        String ratingInfo = "'" + userID + "','" + moveiID + "'," + rating;
+        connection.insertValue("user_rates_movie", ratingInfo);
+    }
+    
+    public String selectIDFromWhereEquals(String table, String column, String attribute) throws SQLException {
+        String id = connection.selectIDFromWhereEquals(table, column, attribute);
+        return id;
     }
 
     public String selectIDFromWhereEquals(String table, String columns[], String attributes[]) throws SQLException, Exception {
@@ -281,7 +340,7 @@ public class DBHelper {
     public int getTotalRows(String table) throws SQLException {
         return connection.getTotalRows(table);
     }
-
+    
     private String createID(int numberOfCharacters, int totalEntries) {
         String id = "";
         String idNumber = "" + (totalEntries + 1);
