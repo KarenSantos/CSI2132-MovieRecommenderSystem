@@ -1,15 +1,13 @@
 
 package model;
 
-import java.util.Calendar;
-
 /**
  *
  * @author karensantos
  */
 public class Movie {
     
-    private final int DATE_LENGTH = 8;
+    private final int DATE_LENGTH = 10;
     
     private String movieID;
     private String name;

@@ -9,7 +9,7 @@ import java.util.Calendar;
  */
 public class Star {
     
-    private final int DATE_LENGTH = 8;
+    private final int DATE_LENGTH = 10;
     
     private String starID;
     private String lastName;

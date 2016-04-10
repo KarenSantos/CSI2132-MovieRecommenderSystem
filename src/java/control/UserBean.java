@@ -7,11 +7,13 @@ package control;
 
 import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.inject.Named;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.event.ActionEvent;
 import model.PasswordService;
 import model.UserAccount;
@@ -25,7 +27,9 @@ import persistence.DBHelper;
 @RequestScoped
 public class UserBean implements Serializable {
 
-    private DBHelper DBHelper;
+    private CurrentData current;
+
+    private String userID;
 
     private String email;
     private String password;
@@ -36,9 +40,36 @@ public class UserBean implements Serializable {
     private String country;
 
     private String addingStatus;
-    private static String pass;
 
-    public UserBean() {}
+    public UserBean() {
+    }
+
+    @PostConstruct
+    public void init() {
+        try {
+            current = CurrentData.getInstance();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            addingStatus = "Sorry. We have encountered a problem connecting with the database.\n"
+                    + "Please try again later.\nError: ClassNotFoundExcpetion.";
+        } catch (SQLException ex) {
+            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+            addingStatus = "Sorry. We have encountered a problem connecting with the database.\n"
+                    + "Please try again later.\nError: SQLException.";
+        }
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setMsg() {
+        this.addingStatus = "foi";
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
 
     public String getEmail() {
         return email;
@@ -104,11 +135,14 @@ public class UserBean implements Serializable {
         this.addingStatus = addstatus;
     }
 
-    public void signUp(ActionEvent actionEvent) {
+    public void setValues(String id) {
+        this.addingStatus = id;
+    }
 
-        connect();
+    public String signUp(ActionEvent actionEvent) {
+
         try {
-            if(DBHelper.selectUserByEmail(email)==null){
+            if (current.getDb().selectUserByEmail(email) == null) {
                 PasswordService ps = null;
                 while (ps == null) {
                     ps = PasswordService.getInstance();
@@ -118,8 +152,10 @@ public class UserBean implements Serializable {
                     encryptedPW = ps.encrypt(password);
                     UserAccount user = new UserAccount("", encryptedPW, lastName, firstName, email, city, province, country);
                     try {
-                        DBHelper.insertUserAccount(user);
-                        addingStatus = "User profile created successfully";
+                        String userID = current.getDb().insertUserAccount(user);
+                        current.setMessage("User profile created successfully");
+                        current.setUserID(userID);
+                        return "main";
                     } catch (SQLException ex) {
                         addingStatus = "Error while creating user account. Try again later.";
                         Logger
@@ -131,17 +167,12 @@ public class UserBean implements Serializable {
                     Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-                addingStatus = "This email account already exists.";
+                addingStatus = "This email account already exists. Try another one.";
             }
         } catch (SQLException ex) {
             addingStatus = "Error while creating user account. Try again later.";
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    private void connect() {
-        if (this.DBHelper == null) {
-            this.DBHelper = new DBHelper();
-        }
+        return "";
     }
 }

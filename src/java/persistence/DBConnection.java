@@ -25,11 +25,10 @@ public class DBConnection {
         st.close();
     }
 
-    public ResultSet selectAllFrom(ResultSet rs, String from) throws SQLException {
+    public ResultSet selectAllFrom(String from) throws SQLException {
         st = db.createStatement();
         String query = "SELECT * FROM " + schema + "." + from;
-        rs = st.executeQuery(query);
-        st.close();
+        ResultSet rs = st.executeQuery(query);
         return rs;
     }
 
