@@ -2,6 +2,7 @@ package control;
 
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,6 +23,7 @@ public class Controller implements Serializable {
     private DataManager manager;
     private String topMessage;
     private String statusMessage;
+    private String searchKey;
 
     private UserAccount user;
     private List<Movie> movies;
@@ -31,7 +33,7 @@ public class Controller implements Serializable {
     private List<Genre> genres;
     private List<Role> roles;
     private List<Studio> studio;
-    
+
     private String currentMovieID;
 
     public Controller() {
@@ -75,9 +77,9 @@ public class Controller implements Serializable {
     public void setCurrent(DataManager current) {
         this.manager = current;
     }
-    
+
     public String getTopMessage() {
-        if (manager!=null){
+        if (manager != null) {
             return manager.getTopMessage();
         }
         return "";
@@ -88,7 +90,7 @@ public class Controller implements Serializable {
     }
 
     public String getStatusMessage() {
-        if (manager!=null){
+        if (manager != null) {
             return manager.getStatusMessage();
         }
         return "";
@@ -96,6 +98,14 @@ public class Controller implements Serializable {
 
     public void setStatusMessage(String statusMessage) {
         manager.setStatusMessage(statusMessage);
+    }
+
+    public String getSearchKey() {
+        return searchKey;
+    }
+
+    public void setSearchKey(String searchKey) {
+        this.searchKey = searchKey;
     }
 
     public UserAccount getUser() {
@@ -170,8 +180,8 @@ public class Controller implements Serializable {
         this.manager.setMovieID(currentMovieID);
         this.currentMovieID = currentMovieID;
     }
-    
-    public Director getDirectorByID(String directorID){
+
+    public Director getDirectorByID(String directorID) {
         Director dir = null;
         try {
             dir = manager.getDb().selectDirectorByID(directorID);
@@ -181,20 +191,20 @@ public class Controller implements Serializable {
         }
         return dir;
     }
-    
-    public String goToMovie(String movieID){
+
+    public String goToMovie(String movieID) {
         System.out.println("got in goToMovie by ID");
         try {
             manager.setCurrentMovie(manager.getDb().selectMovieByID(movieID));
-            System.out.println("movieID: " + movieID + " and movie is: " + (manager.getCurrentMovie()==null));
+            System.out.println("movieID: " + movieID + " and movie is: " + (manager.getCurrentMovie() == null));
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             this.topMessage = "Unable to connect to database at this time.";
         }
         return "movie?faces-redirect=true";
     }
-    
-    public String goToMovies(){
+
+    public String goToMovies() {
         System.out.println("got in goTo ALL movies");
         this.moviesBy = "";
         try {
@@ -205,22 +215,55 @@ public class Controller implements Serializable {
         }
         return "movies?faces-redirect=true";
     }
-    
-    public String goToStarMovies(String starID){
+
+    public String goToStarMovies(String starID) {
         System.out.println("got in go to Star movies");
         System.out.println("starID: " + starID);
         try {
             this.movies = manager.selectStarMovies(starID);
             this.moviesBy = " with " + manager.getDb().selectStarByID(starID).getName();
-            System.out.println("carregou os starMovies");
+            System.out.println("loaded starMovies");
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             this.topMessage = "Unable to connect to database at this time.";
         }
         return "movies?faces-redirect=true";
     }
-    
-    private void clearMessages(){
+
+    public String goToSearchMovies(String searchKey) {
+        System.out.println("got in go to Star movies");
+        System.out.println("search key " + searchKey);
+        searchKey = searchKey.toLowerCase();
+        List<Movie> allMovies = new ArrayList<>();
+        List<Director> allDirectors = new ArrayList<>();
+        try {
+            allMovies = manager.getDb().selectAllMovies();
+            allDirectors = manager.getDb().selectAllDirectors();
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        List<Movie> movies = new ArrayList<>();
+        for (Movie m : allMovies) {
+            if (m.getName().toLowerCase().contains(searchKey)) {
+                movies.add(m);
+            } else if (m.getDateReleased().toLowerCase().contains(searchKey)) {
+                movies.add(m);
+            } else if (m.getLanguage().toLowerCase().contains(searchKey)) {
+                movies.add(m);
+            } else if (m.getCountry().toLowerCase().contains(searchKey)) {
+                movies.add(m);
+            }
+        }
+//        for (Director d : allDirectors){
+//            if (d.getName().contains(searchKey)){}
+//        }
+        this.movies = movies;
+        return "movies?faces-redirect=true";
+    }
+
+    private void clearMessages() {
         manager.clearMessages();
     }
+
 }

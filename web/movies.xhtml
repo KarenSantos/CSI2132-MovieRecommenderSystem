@@ -9,6 +9,21 @@
     <ui:composition template="./template.xhtml">
 
         <ui:define name="content">
+            <div class="search" style="float: right">
+                <p><h:form>
+                        <h:panelGrid columns="3" cellpadding="5">
+                            <p:outputLabel for="search" value="Search:"/>
+                            <p:inputText id="search"
+                                         value="#{controller.searchKey}"
+                                         maxlength="20"/>
+
+                            <p:commandButton id="submitBtn" action="#{controller.goToSearchMovies(controller.searchKey)}"
+                                             value="Search"
+                                             onclick="PF('bui').show()" oncomplete="PF('bui').hide()"
+                                             style="width:200px;float:right;font-size: 15px"/>
+                        </h:panelGrid>
+                    </h:form></p>
+            </div>
             <h2>Movies #{controller.moviesBy}</h2>
             <p><h:outputText  
                     style="color:royalblue; font-size: large; font-weight: bold" 
