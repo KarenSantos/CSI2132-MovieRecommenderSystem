@@ -12,12 +12,9 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.event.ActionEvent;
 import model.PasswordService;
 import model.UserAccount;
-import persistence.DBHelper;
 
 /**
  *

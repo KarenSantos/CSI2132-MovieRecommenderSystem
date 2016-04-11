@@ -5,7 +5,6 @@
  */
 package persistence;
 
-import control.ContextListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,7 +48,7 @@ public class DBPopulator {
                 insertUserRatesMovie();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -71,11 +70,11 @@ public class DBPopulator {
             System.out.println(count + " genres inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -96,11 +95,11 @@ public class DBPopulator {
             System.out.println(count + " roles inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -127,11 +126,11 @@ public class DBPopulator {
             System.out.println(count + " directors inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -154,11 +153,11 @@ public class DBPopulator {
             System.out.println(count + " studios inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -207,11 +206,11 @@ public class DBPopulator {
             System.out.println(count + " users & profiles inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -240,11 +239,11 @@ public class DBPopulator {
             System.out.println(count + " stars inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -276,11 +275,11 @@ public class DBPopulator {
             System.out.println(count + " star_roles inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -315,11 +314,11 @@ public class DBPopulator {
             System.out.println(count + " user_likes_genre inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -353,11 +352,11 @@ public class DBPopulator {
             System.out.println(count + " user_watched_movie inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -391,11 +390,11 @@ public class DBPopulator {
             System.out.println(count + " user_rates_movie inserted \n");
             br.close();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPopulator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -440,13 +439,13 @@ public class DBPopulator {
             br.close();
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ContextListener.class
+            Logger.getLogger(DBPopulator.class
                     .getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ContextListener.class
+            Logger.getLogger(DBPopulator.class
                     .getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ContextListener.class
+            Logger.getLogger(DBPopulator.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }

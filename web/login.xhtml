@@ -29,6 +29,8 @@
                             value="#{loginControl.email}" 
                             required="true" 
                             requiredMessage="An Email is required" 
+                            size="30"
+                            maxlength="30"
                             label="email" />
 
                         <p:outputLabel for="password" value="Password:" />
@@ -36,11 +38,13 @@
                                     value="#{loginControl.password}" 
                                     required="true" 
                                     requiredMessage="A password is required" 
+                                    size="30"
+                                    maxlength="10"
                                     label="password" />
 
                         <f:facet name="footer">
-                            <p:commandButton value="Login" action="#{loginControl.login}" />
-                            <p:commandButton value="Reset" type="reset" />
+                            <p:commandButton value="Login" action="#{loginControl.login}" style="width:100px;float:right"/>
+                            <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
                         </f:facet>
                     </h:panelGrid>
                     <p><h:outputText  

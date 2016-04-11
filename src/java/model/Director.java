@@ -10,6 +10,7 @@ public class Director {
     private String directorID;
     private String lastName;
     private String firstName;
+    private String name;
     private String country;
     
     public Director(){}
@@ -19,6 +20,7 @@ public class Director {
         this.directorID = directorID;
         this.lastName = lastName;
         this.firstName = firstName;
+        this.name = firstName + " " + lastName;
         this.country = country;
     }
 
@@ -44,6 +46,14 @@ public class Director {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCountry() {

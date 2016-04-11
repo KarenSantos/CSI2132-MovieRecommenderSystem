@@ -44,10 +44,6 @@ public class LoginControl {
         }
     }
 
-    public String goToMain() {
-        return "main";
-    }
-
     public String getEmail() {
         return email;
     }

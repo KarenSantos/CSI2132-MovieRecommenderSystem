@@ -153,4 +153,19 @@ public class Controller implements Serializable {
         }
         return "movie";
     }
+    
+    public Director getDirectorByID(String directorID){
+        Director dir = null;
+        try {
+            dir = current.getDb().selectDirectorByID(directorID);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Sorry, we are unable to connect to database at this time.";
+        }
+        return dir;
+    }
+    
+    public String printThat(String that){
+        return that;
+    }
 }

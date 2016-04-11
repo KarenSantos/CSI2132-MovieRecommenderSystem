@@ -184,6 +184,22 @@ public class DBHelper implements Serializable {
         connection.closeStatement();
         return directors;
     }
+    
+    public Director selectDirectorByID(String directorID) throws SQLException {
+        ResultSet rs = null;
+        rs = connection.selectAllFromWhere(rs, "director", "director_id = '" + directorID + "'");
+
+        Director director = null;
+        if (rs.next()) {
+            String lastName = rs.getString(2);
+            String firstName = rs.getString(3);
+            String country = rs.getString(4);
+            director = new Director(directorID, lastName, firstName, country);
+        }
+        rs.close();
+        connection.closeStatement();
+        return director;
+    }
 
     public String insertDirector(Director dir) throws SQLException {
         int totalrows = getTotalRows("director");

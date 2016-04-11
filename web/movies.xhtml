@@ -3,22 +3,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="./template.xhtml">
 
         <ui:define name="content">
             <h2>Movies</h2>
-
             <ui:repeat value="#{controller.movies}" var="movie">
-                <li>
-                    <p><div id="movieLine" onclick="#{controller.goToMovie(movieID)}">
-                            <h:outputText value="#{movie.name}">
-                            </h:outputText>
-                        </div></p>
-                </li>
+                <p>
+                    <h:panelGrid columns="4" cellpadding="5">
+                        <h:outputLink value="#{controller.goToMovie(movie.movieID)}">
+                            <f:param name="movieID" value="#{movie.movieID}"/>
+                            <p:outputLabel id="name" value="#{movie.name}"/> 
+                        </h:outputLink>
+                        <p></p>
+                        <p:commandButton value="Mark as watched" style="width:150px;font-size: 12px"/>
+                        <p:commandButton value="Rate" style="width:60px;font-size: 12px"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" cellpadding="5">
+                        <p:outputLabel id="date" value="Released: #{movie.dateReleased}"/>
+                        <p:outputLabel id="language" value="Language: #{movie.language}"/>
+                        <p:outputLabel id="director" value="Director: #{controller.getDirectorByID(movie.directorID).name}"/>
+                    </h:panelGrid>
+                </p>
             </ui:repeat>
-
         </ui:define>
 
     </ui:composition>

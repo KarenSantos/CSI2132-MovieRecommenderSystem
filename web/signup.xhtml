@@ -46,7 +46,7 @@
                                     requiredMessage="A Password is required"
                                     maxlength="10"/>
                         <p:message for="password"/>
-                        
+
                         <p:outputLabel for="confPwd" value="Confirm Password:"/>
                         <p:password id="confPwd"
                                     value="#{userBean.password}"
@@ -63,7 +63,7 @@
                                      requiredMessage="A name is required"
                                      maxlength="20"/>
                         <p:message for="firstName"/>
-                        
+
                         <p:outputLabel for="lastName" value="Last Name:"/>
                         <p:inputText id="lastName"
                                      value="#{userBean.lastName}"
@@ -92,10 +92,10 @@
                                      maxlength="20"/>
                         <p:message for="country"/>
 
+                        <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
                         <p:commandButton id="submitBtn" actionListener="#{userBean.signUp}"
                                          value="Create Account"
-                                         onclick="PF('bui').show()" oncomplete="PF('bui').hide()"/>
-                        <p:commandButton value="Reset" type="reset"/>
+                                         style="width:200px;float:right"/>
                         <p><h:outputText  
                                 style="color:red; font-size: large; font-weight: bold" 
                                 id="status" 
