@@ -1,11 +1,13 @@
 
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author karensantos
  */
-public class Genre {
+public class Genre implements Serializable {
     
     private String genreID;
     private String name;

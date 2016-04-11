@@ -1,11 +1,13 @@
 
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author karensantos
  */
-public class Director {
+public class Director implements Serializable {
     
     private String directorID;
     private String lastName;

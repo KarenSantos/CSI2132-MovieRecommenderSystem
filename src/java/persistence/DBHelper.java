@@ -228,6 +228,23 @@ public class DBHelper implements Serializable {
         return stars;
     }
 
+    public Star selectStarByID(String starID) throws Exception{
+        ResultSet rs = null;
+        rs = connection.selectAllFromWhere(rs, "star", "star_id = '" + starID + "'");
+
+        Star star = null;
+        if (rs.next()) {
+            String lastName = rs.getString(2);
+            String firstName = rs.getString(3);
+            String DBO = rs.getString(4);
+            String country = rs.getString(5);
+            star = new Star(starID, lastName, firstName, DBO, country);
+        }
+        rs.close();
+        connection.closeStatement();
+        return star;
+    }
+    
     public String insertStar(Star star) throws SQLException {
         int totalrows = getTotalRows("star");
         String id = createID(FIVE_CHARAC, totalrows);
@@ -383,7 +400,15 @@ public class DBHelper implements Serializable {
     public int getTotalRows(String table) throws SQLException {
         return connection.getTotalRows(table);
     }
+    
+    public ResultSet doQuery(String query) throws SQLException {
+        return connection.doQuery(query);
+    }
 
+    public void closeStatement() throws SQLException{
+        connection.closeStatement();
+    }
+    
     private String createID(int numberOfCharacters, int totalEntries) {
         String id = "";
         String idNumber = "" + (totalEntries + 1);
@@ -394,5 +419,5 @@ public class DBHelper implements Serializable {
         id += idNumber;
         return id;
     }
-
+    
 }

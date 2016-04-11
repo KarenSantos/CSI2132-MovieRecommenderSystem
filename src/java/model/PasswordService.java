@@ -1,12 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import sun.misc.BASE64Encoder;
 import sun.misc.CharacterEncoder;
 
-public final class PasswordService {
+public final class PasswordService implements Serializable {
 
     private static PasswordService instance;
 

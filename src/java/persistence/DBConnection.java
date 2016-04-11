@@ -39,31 +39,6 @@ public class DBConnection {
         return rs;
     }
 
-    public ResultSet selectFromJoin(ResultSet rs, String selection, String[] from) throws SQLException {
-        st = db.createStatement();
-
-        String allFrom = schema + "." + from[0];
-        for (int i = 1; i < from.length; i++) {
-            allFrom += ", " + schema + "." + from[i];
-        }
-
-        String query = "SELECT " + selection + " FROM " + allFrom;
-
-        rs = st.executeQuery(query);
-
-//        while (rs.next()) {
-//            System.out.print("Column 1:");
-//            System.out.println(rs.getString(1)); // we are getting information
-//            // from column 1
-//            // we can also getString by the name of the attribute
-//        }
-//
-//        System.out.println();
-//        rs.close();
-        return rs;
-
-    }
-
     public void insertValue(String table, String values) throws SQLException {
         st = db.createStatement();
 
@@ -127,6 +102,12 @@ public class DBConnection {
         rs.close();
         st.close();
         return result;
+    }
+    
+    public ResultSet doQuery(String query) throws SQLException{
+        st = db.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        return rs;
     }
 
 //    public static void SelectF(Connection db) throws SQLException {

@@ -6,103 +6,105 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <h:head>
-        <title>Sign Up</title>
-    </h:head>
-
     <h:body>
 
         <ui:composition template="./template.xhtml">
 
             <ui:define name="content">
+                <div style="position:fixed;left: 500px">
+                    <h2>Sign Up</h2>
+                    <p><h:outputText  
+                            style="color:royalblue; font-size: large; font-weight: bold" 
+                            id="topMessage" 
+                            value="#{userBean.topMessage}"/></p>
+                    <h:form>
+                        <h:panelGrid columns="3" cellpadding="4">
 
-                <h2>Sign Up</h2>
-                <h:form>
-                    <h:panelGrid columns="3">
+                            <p:outputLabel for="email" value="Email:"/>
+                            <p:inputText id="email"
+                                         value="#{userBean.email}"
+                                         validatorMessage="Invalid Email format"
+                                         label="Email" required="true"
+                                         requiredMessage="An Email is required"
+                                         title="Enter your email (e.g. xxx@xxx.xxx)"
+                                         maxlength="30">
+                                <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                                <p:ajax event="keyup" update="emailMsg"/>
+                            </p:inputText>
+                            <p:message id="emailMsg" for="email"/>
 
-                        <p:outputLabel for="email" value="Email:"/>
-                        <p:inputText id="email"
-                                     value="#{userBean.email}"
-                                     validatorMessage="Invalid Email format"
-                                     label="Email" required="true"
-                                     requiredMessage="An Email is required"
-                                     title="Enter your email (e.g. xxx@xxx.xxx)"
-                                     maxlength="30">
-                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
-                            <p:ajax event="keyup" update="emailMsg"/>
-                        </p:inputText>
-                        <p:message id="emailMsg" for="email"/>
+                            <p:outputLabel for="password" value="Password:"/>
+                            <p:password id="password"
+                                        value="#{userBean.password}"
+                                        feedback="true"
+                                        promptLabel="Enter Password"
+                                        weakLabel="Weak Password"
+                                        goodLabel="Good Password"
+                                        strongLabel="Strong Password"
+                                        match="confPwd" 
+                                        required="true"
+                                        requiredMessage="A Password is required"
+                                        maxlength="10"/>
+                            <p:message for="password"/>
 
-                        <p:outputLabel for="password" value="Password:"/>
-                        <p:password id="password"
-                                    value="#{userBean.password}"
-                                    feedback="true"
-                                    promptLabel="Enter Password"
-                                    weakLabel="Weak Password"
-                                    goodLabel="Good Password"
-                                    strongLabel="Strong Password"
-                                    match="confPwd" 
-                                    required="true"
-                                    requiredMessage="A Password is required"
-                                    maxlength="10"/>
-                        <p:message for="password"/>
+                            <p:outputLabel for="confPwd" value="Confirm Password:"/>
+                            <p:password id="confPwd"
+                                        value="#{userBean.password}"
+                                        required="true"
+                                        title="Repeat password as above"
+                                        requiredMessage="You need to confirm your password"
+                                        maxlength="10"/>
+                            <p:message for="confPwd"/>
 
-                        <p:outputLabel for="confPwd" value="Confirm Password:"/>
-                        <p:password id="confPwd"
-                                    value="#{userBean.password}"
-                                    required="true"
-                                    title="Repeat password as above"
-                                    requiredMessage="You need to confirm your password"
-                                    maxlength="10"/>
-                        <p:message for="confPwd"/>
+                            <p:outputLabel for="firstName" value="First Name:"/>
+                            <p:inputText id="firstName"
+                                         value="#{userBean.firstName}"
+                                         required="true"
+                                         requiredMessage="A name is required"
+                                         maxlength="20"/>
+                            <p:message for="firstName"/>
 
-                        <p:outputLabel for="firstName" value="First Name:"/>
-                        <p:inputText id="firstName"
-                                     value="#{userBean.firstName}"
-                                     required="true"
-                                     requiredMessage="A name is required"
-                                     maxlength="20"/>
-                        <p:message for="firstName"/>
+                            <p:outputLabel for="lastName" value="Last Name:"/>
+                            <p:inputText id="lastName"
+                                         value="#{userBean.lastName}"
+                                         label="Last Name"
+                                         maxlength="20">
+                                <p:ajax event="keyup" update="lastNameMsg"/>
+                            </p:inputText>
+                            <p:message  id="lastNameMsg" for="lastName"/>
 
-                        <p:outputLabel for="lastName" value="Last Name:"/>
-                        <p:inputText id="lastName"
-                                     value="#{userBean.lastName}"
-                                     label="Last Name"
-                                     maxlength="20">
-                            <p:ajax event="keyup" update="lastNameMsg"/>
-                        </p:inputText>
-                        <p:message  id="lastNameMsg" for="lastName"/>
+                            <p:outputLabel value="City:"/>
+                            <p:inputText id="city"
+                                         value="#{userBean.city}"
+                                         maxlength="30"/>
+                            <p:message for="city"/>
 
-                        <p:outputLabel value="City:"/>
-                        <p:inputText id="city"
-                                     value="#{userBean.city}"
-                                     maxlength="30"/>
-                        <p:message for="city"/>
+                            <p:outputLabel for="province" value="Province:"/>
+                            <p:inputText id="province"
+                                         value="#{userBean.province}"
+                                         maxlength="2"
+                                         title="Enter the 2 letters of your province"/>
+                            <p:message for="province"/>
 
-                        <p:outputLabel for="province" value="Province:"/>
-                        <p:inputText id="province"
-                                     value="#{userBean.province}"
-                                     maxlength="2"
-                                     title="Enter the 2 letters of your province"/>
-                        <p:message for="province"/>
+                            <p:outputLabel for="country" value="Country:"/>
+                            <p:inputText id="country"
+                                         value="#{userBean.country}"
+                                         maxlength="20"/>
+                            <p:message for="country"/>
 
-                        <p:outputLabel for="country" value="Country:"/>
-                        <p:inputText id="country"
-                                     value="#{userBean.country}"
-                                     maxlength="20"/>
-                        <p:message for="country"/>
-
-                        <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
-                        <p:commandButton id="submitBtn" actionListener="#{userBean.signUp}"
-                                         value="Create Account"
-                                         style="width:200px;float:right"/>
-                        <p><h:outputText  
-                                style="color:red; font-size: large; font-weight: bold" 
-                                id="status" 
-                                value="#{userBean.addingStatus}"/></p>
-                    </h:panelGrid>
-                </h:form>
-
+                            <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
+                            <p:commandButton id="submitBtn" actionListener="#{userBean.signUp}"
+                                             value="Create Account"
+                                             onclick="PF('bui').show()" oncomplete="PF('bui').hide()"
+                                             style="width:200px;float:right"/>
+                        </h:panelGrid>
+                        <br/><br/>
+                    </h:form>
+                    <p><h:outputText  
+                            style="color:royalblue; font-size: large; float:left;font-weight: bold" 
+                            id="status" 
+                            value="#{userBean.addingStatus}"/></p>
+                </div>
             </ui:define>
         </ui:composition>
 

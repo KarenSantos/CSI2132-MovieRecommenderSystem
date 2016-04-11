@@ -1,19 +1,20 @@
 
 package model;
 
-import java.util.Calendar;
+import java.io.Serializable;
 
 /**
  *
  * @author karensantos
  */
-public class Star {
+public class Star implements Serializable {
     
     private final int DATE_LENGTH = 10;
     
     private String starID;
     private String lastName;
     private String firstName;
+    private String name;
     private String DBO;
     private String country;
     
@@ -24,6 +25,7 @@ public class Star {
         this.starID = starID;
         this.lastName = lastName;
         this.firstName = firstName;
+        name = firstName + " " + lastName;
         setDBO(DBO);
         this.country = country;
     }
@@ -50,6 +52,14 @@ public class Star {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDBO() {

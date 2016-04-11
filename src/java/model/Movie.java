@@ -1,11 +1,13 @@
 
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author karensantos
  */
-public class Movie {
+public class Movie implements Serializable {
     
     private final int DATE_LENGTH = 10;
     

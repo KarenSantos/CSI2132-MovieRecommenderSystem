@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="right">
+                <p><p:button outcome="insertMovie" value="Insert new Movie"/></p>
+                <p><p:button outcome="insertGenre" value="Insert new Genre"/></p>
+                <p><p:button outcome="insertDirector" value="Insert new Director"/></p>
+            </ui:define>
+
+            <ui:define name="content">
+                <div style="position:fixed;left:400px">
+                    <h2>Insert new Genre</h2>
+                    <p><h:outputText  
+                            style="color:royalblue; font-size: large; font-weight: bold" 
+                            id="topMessage" 
+                            value="#{genreBean.message}"/></p>
+
+                    <h:form>
+                        <h:panelGrid columns="3" cellpadding="5">
+
+                            <p:outputLabel for="name" value="Name:"/>
+                            <p:inputText id="name"
+                                         value="#{genreBean.name}"
+                                         required="true"
+                                         requiredMessage="A genre name is required"
+                                         title="Enter the genre name"
+                                         size="20"
+                                         maxlength="20"/>
+                            <p:message id="nameMsg" for="name"/>
+
+                            <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
+                            <p:commandButton id="submitBtn" action="#{genreBean.insert}"
+                                             value="Insert Genre"
+                                             style="width:200px;float:right"/>
+                            <p><h:outputText  
+                                    style="color:red; font-size: large; font-weight: bold" 
+                                    id="status" 
+                                    value="#{genreBean.addingStatus}"/></p>
+                        </h:panelGrid>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

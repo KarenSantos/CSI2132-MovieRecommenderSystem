@@ -1,13 +1,14 @@
 
 package model;
 
-import java.util.Calendar;
+import java.io.Serializable;
+
 
 /**
  *
  * @author karensantos
  */
-public class UserProfile {
+public class UserProfile implements Serializable {
 
     private final int DATE_LENGTH = 8;
 

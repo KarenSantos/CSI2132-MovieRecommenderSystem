@@ -21,25 +21,25 @@ import model.UserAccount;
 @RequestScoped
 public class LoginControl {
 
-    private CurrentData current;
+    private DataManager current;
 
     private String email;
     private String password;
 
-    private boolean submited;
-    private boolean validated;
-    private String status;
+    private String topMessage;
+    private String errorMessage;
 
     public LoginControl() {
+        clearMessages();
         try {
-            current = CurrentData.getInstance();
+            current = DataManager.getInstance();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(LoginControl.class.getName()).log(Level.SEVERE, null, ex);
-            status = "Sorry. We have encountered a problem connecting with the database.\n"
+            topMessage = "Sorry. We have encountered a problem connecting with the database.\n"
                     + "Please try again later.\nError: ClassNotFoundExcpetion.";
         } catch (SQLException ex) {
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
-            status = "Sorry. We have encountered a problem connecting with the database.\n"
+            topMessage = "Sorry. We have encountered a problem connecting with the database.\n"
                     + "Please try again later.\nError: SQLException.";
         }
     }
@@ -60,24 +60,20 @@ public class LoginControl {
         this.password = password;
     }
 
-    public String getStatus() {
-        return status;
+    public String getTopMessage() {
+        return topMessage;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setTopMessage(String topMessage) {
+        this.topMessage = topMessage;
     }
 
-    public boolean getShowMessage() {
-        return (submited && !validated);
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public boolean isValidated() {
-        return validated;
-    }
-
-    public void setValidated(boolean validated) {
-        this.validated = validated;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public String login() {
@@ -96,28 +92,33 @@ public class LoginControl {
                         current.setUserID(user.getUserID());
                         returnPage = "main";
                     } else {
-                        status = "Incorrect password or email.";
+                        clearMessages();
+                        errorMessage = "Incorrect password or email.";
                     }
                 } else {
-                    status = "Incorrect email or password.";
+                    clearMessages();
+                    errorMessage = "Incorrect email or password.";
 
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(LoginControl.class
                         .getName()).log(Level.SEVERE, null, ex);
-                status = "Could not connect to the database. Try again later.";
+                clearMessages();
+                errorMessage = "Could not connect to the database. Try again later.";
             }
 
         } catch (Exception ex) {
             Logger.getLogger(LoginControl.class
                     .getName()).log(Level.SEVERE, null, ex);
-            status = "An error has occured. Try again later.";
+            clearMessages();
+            errorMessage = "An error has occured. Try again later.";
         }
 
-        validated = true;
-//        FacesMessage msg = new FacesMessage("wrong");
-//        FacesContext.getCurrentInstance().addMessage("status", msg);
-//        status = "incorrect";
         return returnPage;
+    }
+    
+    private void clearMessages(){
+        topMessage = "";
+        errorMessage = "";
     }
 }

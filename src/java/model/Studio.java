@@ -1,11 +1,13 @@
 
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author karensantos
  */
-public class Studio {
+public class Studio implements Serializable {
     
     private String studioID;
     private String name;

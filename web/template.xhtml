@@ -19,27 +19,33 @@
         <div>
             <div id="left" class="left_content">
                 <ui:insert name="left">
-                    <p><p:button outcome="myAccount" value="My Account"></p:button></p>
-                    <p><p:button outcome="movies" value="Movies"></p:button></p>
-                    <p><p:button outcome="stars" value="Stars"></p:button></p>
-                    <p><p:button outcome="directors" value="Directors"></p:button></p>
-                    <p><p:button outcome="advancedSearch" value="Advanced Search"></p:button></p>
-                    <p></p>
-                    <p><p:button outcome="index" value="Logout"></p:button></p>
+                    <h:form>
+                        <p><p:commandButton action="#{controller.goToMovies}" value="Movies"/></p></h:form>
+                    <p><p:button outcome="stars" value="Stars"/></p>
+                    <p><p:button outcome="directors" value="Directors"/></p>
+                    <p><p:button outcome="insertMovie" value="Insert New"/></p>
+                    <p><p:button outcome="advancedSearch" value="Advanced Search"/></p>
+                    <p><p:button outcome="myAccount" value="My Account"/></p>
+                    <br></br>
+                    <p><p:button outcome="index" value="Logout"/></p>
                 </ui:insert>
             </div>
             <div>
                 <div id="right">
-                    <ui:insert name="right">Right</ui:insert>
+                    <ui:insert name="right"></ui:insert>
                 </div>
                 <div id="content" class="middle_content">
-                    <ui:insert name="content">Content</ui:insert>
+                    <ui:insert name="content"></ui:insert>
                 </div>
             </div>
         </div>
         <div class="footer">
             <ui:insert name="bottom">
-                <a href="about.xhtml">About Us</a>
+                <div style="float: right">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p style="font-size: 15px">About Us: This Movie Recommender Website was developed by Precious and Karen</p></div>
             </ui:insert>
         </div>
 

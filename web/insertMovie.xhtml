@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="right">
+                <p><p:button outcome="insertMovie" value="Insert new Movie"/></p>
+                <p><p:button outcome="insertGenre" value="Insert new Genre"/></p>
+                <p><p:button outcome="insertDirector" value="Insert new Director"/></p>
+            </ui:define>
+
+            <ui:define name="content">
+                <h2>Insert new Movie</h2>
+                <p><h:outputText  
+                        style="color:royalblue; font-size: large; font-weight: bold" 
+                        id="topMessage" 
+                        value="#{movieBean.topMessage}"/></p>
+                <h:form>
+                    <h:panelGrid columns="3" cellpadding="5">
+
+                        <p:outputLabel for="name" value="Name:"/>
+                        <p:inputText id="name"
+                                     value="#{movieBean.name}"
+                                     required="true"
+                                     requiredMessage="A movie name is required"
+                                     title="Enter the movie name"
+                                     size="40"
+                                     maxlength="40"/>
+                        <p:message id="nameMsg" for="name"/>
+
+                        <p:outputLabel for="button" value="Button:" />
+                        <p:calendar id="button" value="#{movieBean.date}" showOn="button" />
+                        <p:message id="dateMsg" for="language"/>
+
+                        <p:outputLabel for="language" value="Language:"/>
+                        <p:inputText id="language"
+                                     value="#{movieBean.language}"
+                                     required="true"
+                                     requiredMessage="A movie language is required"
+                                     title="Enter the movie language"
+                                     size="10"
+                                     maxlength="10"/>
+                        <p:message id="langMsg" for="language"/>
+
+                        <h:outputLabel for="subs" value="Subtitles: " />
+                        <p:selectBooleanCheckbox id="subs" value="#{movieBean.subtitled}" />
+                        <p:message id="subMsg" for="subs"/>
+
+                        <p:outputLabel for="country" value="Country:"/>
+                        <p:inputText id="country"
+                                     value="#{movieBean.country}"
+                                     size="20"
+                                     maxlength="20"/>
+                        <p:message id="countryMsg" for="country"/>
+
+                        <p:outputLabel for="ageRes" value="Age restriction: " />
+                        <p:inputText id="ageRes" value="#{movieBean.ageRestriction}" label="Number">
+                            <f:validateDoubleRange minimum="10" maximum="18" />
+                        </p:inputText>
+                        <p:message id="ageMsg" for="ageRes"/>
+
+                        <p:outputLabel for="director" value="Director:"/>
+                        <p:inputText id="director"
+                                     value="#{movieBean.director}"
+                                     size="40"
+                                     maxlength="40"/>
+                        <p:message id="dirMsg" for="director"/>
+                        
+                        <p:outputLabel for="dirCountry" value="Director's country:"/>
+                        <p:inputText id="dirCountry"
+                                     value="#{movieBean.directorCountry}"
+                                     size="20"
+                                     maxlength="20"/>
+                        <p:message id="dirCounMsg" for="dirCountry"/>
+                        
+                        <br></br>
+                        <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
+                        <p:commandButton id="submitBtn" actionListener="#{userMovie.insertMovie}"
+                                         value="Insert Movie"
+                                         style="width:200px;float:right"/>
+                        <p><h:outputText  
+                                style="color:red; font-size: large; font-weight: bold" 
+                                id="status" 
+                                value="#{movieBean.addingStatus}"/></p>
+                    </h:panelGrid>
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>

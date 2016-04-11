@@ -9,23 +9,26 @@
     <ui:composition template="./template.xhtml">
 
         <ui:define name="content">
-            <h2>Movies</h2>
+            <h2>Movies #{controller.moviesBy}</h2>
+            <p><h:outputText  
+                    style="color:royalblue; font-size: large; font-weight: bold" 
+                    id="topMessage" 
+                    value="#{loginControl.topMessage}"/></p>
             <ui:repeat value="#{controller.movies}" var="movie">
-                <p>
-                    <h:panelGrid columns="4" cellpadding="5">
-                        <h:outputLink value="#{controller.goToMovie(movie.movieID)}">
-                            <f:param name="movieID" value="#{movie.movieID}"/>
-                            <p:outputLabel id="name" value="#{movie.name}"/> 
-                        </h:outputLink>
-                        <p></p>
-                        <p:commandButton value="Mark as watched" style="width:150px;font-size: 12px"/>
-                        <p:commandButton value="Rate" style="width:60px;font-size: 12px"/>
-                    </h:panelGrid>
-                    <h:panelGrid columns="3" cellpadding="5">
-                        <p:outputLabel id="date" value="Released: #{movie.dateReleased}"/>
-                        <p:outputLabel id="language" value="Language: #{movie.language}"/>
-                        <p:outputLabel id="director" value="Director: #{controller.getDirectorByID(movie.directorID).name}"/>
-                    </h:panelGrid>
+                <p><h:form>
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:commandLink action="#{controller.goToMovie(movie.movieID)}">
+                                <p:outputLabel id="name" value="#{movie.name}" style="font-size: 22px"/> 
+                            </h:commandLink>
+                            <p:commandButton value="Mark as watched" style="width:150px;font-size: 12px"/>
+                            <p:commandButton value="Rate" style="width:60px;font-size: 12px"/>
+                        </h:panelGrid>
+                        <h:panelGrid columns="3" cellpadding="5">
+                            <p:outputLabel id="date" value="Released: #{movie.dateReleased}   |"/>
+                            <p:outputLabel id="language" value="   Language: #{movie.language}   |"/>
+                            <p:outputLabel id="director" value="   Director: #{controller.getDirectorByID(movie.directorID).name}"/>
+                        </h:panelGrid>
+                    </h:form>
                 </p>
             </ui:repeat>
         </ui:define>

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import model.*;
@@ -18,11 +19,13 @@ import model.*;
 @SessionScoped
 public class Controller implements Serializable {
 
-    private CurrentData current;
+    private DataManager manager;
     private String topMessage;
+    private String statusMessage;
 
     private UserAccount user;
     private List<Movie> movies;
+    private String moviesBy;
     private List<Star> stars;
     private List<Director> directors;
     private List<Genre> genres;
@@ -37,16 +40,18 @@ public class Controller implements Serializable {
     @PostConstruct
     public void init() {
         try {
-            current = CurrentData.getInstance();
+            manager = DataManager.getInstance();
+            clearMessages();
             try {
-                this.topMessage = current.getMessage();
-                user = current.getUser();
-                movies = current.getDb().selectAllMovies();
-                stars = current.getDb().selectAllStars();
-                directors = current.getDb().selectAllDirectors();
-                genres = current.getDb().selectAllGenres();
-                roles = current.getDb().selectAllRoles();
-                studio = current.getDb().selectAllStudios();
+                this.topMessage = manager.getTopMessage();
+                user = manager.getUser();
+                movies = manager.getDb().selectAllMovies();
+                moviesBy = "";
+                stars = manager.getDb().selectAllStars();
+                directors = manager.getDb().selectAllDirectors();
+                genres = manager.getDb().selectAllGenres();
+                roles = manager.getDb().selectAllRoles();
+                studio = manager.getDb().selectAllStudios();
             } catch (Exception ex1) {
                 Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex1);
                 topMessage = "Sorry. We are not being able to connect to the database.";
@@ -63,20 +68,34 @@ public class Controller implements Serializable {
         }
     }
 
-    public CurrentData getCurrent() {
-        return current;
+    public DataManager getCurrent() {
+        return manager;
     }
 
-    public void setCurrent(CurrentData current) {
-        this.current = current;
+    public void setCurrent(DataManager current) {
+        this.manager = current;
     }
     
     public String getTopMessage() {
-        return topMessage;
+        if (manager!=null){
+            return manager.getTopMessage();
+        }
+        return "";
     }
 
     public void setTopMessage(String message) {
-        this.topMessage = message;
+        manager.setTopMessage(message);
+    }
+
+    public String getStatusMessage() {
+        if (manager!=null){
+            return manager.getStatusMessage();
+        }
+        return "";
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        manager.setStatusMessage(statusMessage);
     }
 
     public UserAccount getUser() {
@@ -93,6 +112,14 @@ public class Controller implements Serializable {
 
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
+    }
+
+    public String getMoviesBy() {
+        return moviesBy;
+    }
+
+    public void setMoviesBy(String moviesBy) {
+        this.moviesBy = moviesBy;
     }
 
     public List<Star> getStars() {
@@ -140,24 +167,14 @@ public class Controller implements Serializable {
     }
 
     public void setCurrentMovieID(String currentMovieID) {
-        this.current.setMovieID(currentMovieID);
+        this.manager.setMovieID(currentMovieID);
         this.currentMovieID = currentMovieID;
-    }
-    
-    public String goToMovie(String movieID){
-        try {
-            current.setCurrentMovie(current.getDb().selectMovieByID(movieID));
-        } catch (Exception ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-            this.topMessage = "Unable to connect to database at this time.";
-        }
-        return "movie";
     }
     
     public Director getDirectorByID(String directorID){
         Director dir = null;
         try {
-            dir = current.getDb().selectDirectorByID(directorID);
+            dir = manager.getDb().selectDirectorByID(directorID);
         } catch (SQLException ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             this.topMessage = "Sorry, we are unable to connect to database at this time.";
@@ -165,7 +182,45 @@ public class Controller implements Serializable {
         return dir;
     }
     
-    public String printThat(String that){
-        return that;
+    public String goToMovie(String movieID){
+        System.out.println("got in goToMovie by ID");
+        try {
+            manager.setCurrentMovie(manager.getDb().selectMovieByID(movieID));
+            System.out.println("movieID: " + movieID + " and movie is: " + (manager.getCurrentMovie()==null));
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movie?faces-redirect=true";
+    }
+    
+    public String goToMovies(){
+        System.out.println("got in goTo ALL movies");
+        this.moviesBy = "";
+        try {
+            this.movies = manager.getDb().selectAllMovies();
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movies?faces-redirect=true";
+    }
+    
+    public String goToStarMovies(String starID){
+        System.out.println("got in go to Star movies");
+        System.out.println("starID: " + starID);
+        try {
+            this.movies = manager.selectStarMovies(starID);
+            this.moviesBy = " with " + manager.getDb().selectStarByID(starID).getName();
+            System.out.println("carregou os starMovies");
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movies?faces-redirect=true";
+    }
+    
+    private void clearMessages(){
+        manager.clearMessages();
     }
 }

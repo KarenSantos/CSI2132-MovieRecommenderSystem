@@ -6,10 +6,6 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <h:head>
-        <title>Login</title>
-    </h:head>
-
     <body>
 
         <ui:composition template="./template.xhtml">
@@ -20,39 +16,44 @@
             </ui:define>
 
             <ui:define name="content">
-                <h2>Login</h2>
-                <h:form>
-                    <h:panelGrid columns="2" cellpadding="5">
-                        <p:outputLabel for="email" value="Email:" />
-                        <p:inputText 
-                            id="email" 
-                            value="#{loginControl.email}" 
-                            required="true" 
-                            requiredMessage="An Email is required" 
-                            size="30"
-                            maxlength="30"
-                            label="email" />
-
-                        <p:outputLabel for="password" value="Password:" />
-                        <p:password id="password" 
-                                    value="#{loginControl.password}" 
-                                    required="true" 
-                                    requiredMessage="A password is required" 
-                                    size="30"
-                                    maxlength="10"
-                                    label="password" />
-
-                        <f:facet name="footer">
-                            <p:commandButton value="Login" action="#{loginControl.login}" style="width:100px;float:right"/>
-                            <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
-                        </f:facet>
-                    </h:panelGrid>
+                <div style="position: fixed;left: 500px">
+                    <h2>Login</h2>
                     <p><h:outputText  
                             style="color:royalblue; font-size: large; font-weight: bold" 
-                            id="status" 
-                            value="#{loginControl.status}"/></p>               
-                </h:form>
+                            id="topMessage" 
+                            value="#{loginControl.topMessage}"/></p>
+                    <h:form>
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:outputLabel for="email" value="Email:" />
+                            <p:inputText 
+                                id="email" 
+                                value="#{loginControl.email}" 
+                                required="true" 
+                                requiredMessage="An Email is required" 
+                                size="30"
+                                maxlength="30"
+                                label="email" />
 
+                            <p:outputLabel for="password" value="Password:" />
+                            <p:password id="password" 
+                                        value="#{loginControl.password}" 
+                                        required="true" 
+                                        requiredMessage="A password is required" 
+                                        size="30"
+                                        maxlength="10"
+                                        label="password" />
+
+                            <f:facet name="footer">
+                                <p:commandButton value="Login" action="#{loginControl.login}" style="width:100px;float:right"/>
+                                <p:commandButton value="Reset" type="reset" style="width:100px;float:right"/>
+                            </f:facet>
+                        </h:panelGrid>
+                        <p><h:outputText  
+                                style="color:red; font-size: large; font-weight: bold" 
+                                id="error" 
+                                value="#{loginControl.errorMessage}"/></p>               
+                    </h:form>
+                </div>
             </ui:define>
         </ui:composition>
 

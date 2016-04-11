@@ -24,7 +24,7 @@ import model.UserAccount;
 @RequestScoped
 public class UserBean implements Serializable {
 
-    private CurrentData current;
+    private DataManager manager;
 
     private String userID;
 
@@ -36,6 +36,7 @@ public class UserBean implements Serializable {
     private String province;
     private String country;
 
+    private String topMessage;
     private String addingStatus;
 
     public UserBean() {
@@ -44,7 +45,7 @@ public class UserBean implements Serializable {
     @PostConstruct
     public void init() {
         try {
-            current = CurrentData.getInstance();
+            manager = DataManager.getInstance();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
             addingStatus = "Sorry. We have encountered a problem connecting with the database.\n"
@@ -124,6 +125,14 @@ public class UserBean implements Serializable {
         this.country = country;
     }
 
+    public String getTopMessage() {
+        return topMessage;
+    }
+
+    public void setTopMessage(String topMessage) {
+        this.topMessage = topMessage;
+    }
+    
     public String getAddingStatus() {
         return addingStatus;
     }
@@ -137,9 +146,15 @@ public class UserBean implements Serializable {
     }
 
     public String signUp(ActionEvent actionEvent) {
-
         try {
-            if (current.getDb().selectUserByEmail(email) == null) {
+            manager = DataManager.getInstance();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            if (manager.getDb().selectUserByEmail(email) == null) {
                 PasswordService ps = null;
                 while (ps == null) {
                     ps = PasswordService.getInstance();
@@ -149,10 +164,9 @@ public class UserBean implements Serializable {
                     encryptedPW = ps.encrypt(password);
                     UserAccount user = new UserAccount("", encryptedPW, lastName, firstName, email, city, province, country);
                     try {
-                        String userID = current.getDb().insertUserAccount(user);
-                        current.setMessage("User profile created successfully");
-                        current.setUserID(userID);
-                        return "main";
+                        String userID = manager.getDb().insertUserAccount(user);
+                        this.addingStatus = "User profile created successfully";
+                        manager.setUserID(userID);
                     } catch (SQLException ex) {
                         addingStatus = "Error while creating user account. Try again later.";
                         Logger
@@ -164,12 +178,12 @@ public class UserBean implements Serializable {
                     Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
-                addingStatus = "This email account already exists. Try another one.";
+                addingStatus = "This email account already exists.";
             }
         } catch (SQLException ex) {
             addingStatus = "Error while creating user account. Try again later.";
             Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "";
+        return null;
     }
 }
