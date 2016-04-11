@@ -19,6 +19,7 @@ public class Movie implements Serializable {
     private String country;
     private int ageRestriction;
     private String directorID;
+    private int averageRating;
     
     public Movie(){}
     
@@ -97,6 +98,14 @@ public class Movie implements Serializable {
 
     public void setDirectorID(String directorID) {
         this.directorID = directorID;
+    }
+
+    public int getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(int averageRating) {
+        this.averageRating = averageRating;
     }
     
     @Override

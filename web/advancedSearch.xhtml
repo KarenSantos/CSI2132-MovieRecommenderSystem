@@ -2,12 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     
     <ui:composition template="./template.xhtml">
 
         <ui:define name="content">
             <h2>Advanced Search</h2>
+            
+            <p><h:form>
+                        <h:panelGrid columns="2" cellpadding="5">
+
+                            <p:commandButton id="submitBtn1" action="#{controller.bestRatedMovies()}"
+                                             value="Best rated movies"
+                                             style="width:200px;float:right;font-size: 15px"/>
+                            
+                            <p:commandButton id="submitBtn2" action="#{controller.worstRatedMovies()}"
+                                             value="Worst rated movies"
+                                             style="width:200px;float:right;font-size: 15px"/>
+                            
+                            <p:commandButton id="submitBtn3" action="#{controller.sortNewestToOldest}"
+                                             value="Sort movie from newest to oldest"
+                                             style="width:200px;float:right;font-size: 15px"/>
+                            
+                            <p:commandButton id="submitBtn4" action="#{controller.sortOldestToNewest()}"
+                                             value="Sort movie from oldest to newest"
+                                             style="width:200px;float:right;font-size: 15px"/>
+                        </h:panelGrid>
+                    </h:form></p>
+            
         </ui:define>
 
     </ui:composition>

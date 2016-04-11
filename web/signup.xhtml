@@ -10,6 +10,11 @@
 
         <ui:composition template="./template.xhtml">
 
+            <ui:define name="left">
+                <p><p:button outcome="signup" value="Sign Up"></p:button></p>
+                <p><p:button outcome="login" value="Login"></p:button></p>
+            </ui:define>
+            
             <ui:define name="content">
                 <div style="position:fixed;left: 500px">
                     <h2>Sign Up</h2>

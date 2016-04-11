@@ -8,6 +8,8 @@ package control;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +18,7 @@ import persistence.DBHelper;
 
 /**
  *
- * @author karensantos 
+ * @author karensantos
  */
 public class DataManager {
 
@@ -30,7 +32,7 @@ public class DataManager {
     private UserAccount user;
     private Movie currentMovie;
     private String statusMessage;
-    
+
     private DataManager() throws ClassNotFoundException, SQLException {
         this.db = new DBHelper();
         System.out.println("helper has ben initialized at current data");
@@ -59,7 +61,7 @@ public class DataManager {
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
-    
+
     public String getUserID() {
         return userID;
     }
@@ -89,7 +91,7 @@ public class DataManager {
     public void setUser(UserAccount user) {
         this.user = user;
     }
-    
+
     public static synchronized DataManager getInstance() throws ClassNotFoundException, SQLException {
         if (instance == null) {
             instance = new DataManager();
@@ -104,13 +106,13 @@ public class DataManager {
     public void setCurrentMovie(Movie movie) {
         this.currentMovie = movie;
     }
-    
-    public void clearMessages(){
+
+    public void clearMessages() {
         this.topMessage = "";
         this.statusMessage = "";
     }
-    
-    public List<Movie> selectStarMovies(String starID) throws SQLException, Exception{
+
+    public List<Movie> selectStarMovies(String starID) throws SQLException, Exception {
         List<Movie> movies = new ArrayList<>();
         ResultSet rs = db.doQuery("SELECT * FROM " + schema + ".movie m, " + schema + ".movie_star ms "
                 + "WHERE ms.star_id = '" + starID + "' AND m.movie_id = ms.movie_id;");
@@ -124,7 +126,37 @@ public class DataManager {
         db.closeStatement();
         return movies;
     }
-    
-    
-    
+
+    public List<Movie> selectBestRatedMovies() throws SQLException {
+        List<Movie> movies = new ArrayList<>();
+        try {
+            movies = db.selectAllMovies();
+            getAverageRatings(movies);
+        } catch (Exception ex) {
+            Logger.getLogger(DataManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Collections.sort(movies, new Comparator<Movie>() {
+            @Override
+            public int compare(Movie m1, Movie m2) {
+                return m2.getAverageRating() - m1.getAverageRating(); // Ascending
+            }
+        });
+        return movies;
+    }
+
+    public void getAverageRatings(List<Movie> movies) throws SQLException {
+        ResultSet rs = db.doQuery("SELECT m.movie_id, AVG(r.rating) AS Average_rating FROM "
+                + schema + ".movie m, " + schema + ".user_rates_movie r "
+                + "WHERE m.movie_id = r.movie_id GROUP BY m.movie_id");
+        while (rs.next()) {
+            for (Movie m : movies) {
+                if (m.getMovieID().equals(rs.getString(1))) {
+                    m.setAverageRating((int) Math.ceil(rs.getDouble(2)));
+                }
+            }
+        }
+        rs.close();
+        db.closeStatement();
+    }
+
 }

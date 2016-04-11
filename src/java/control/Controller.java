@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import model.*;
@@ -209,6 +208,7 @@ public class Controller implements Serializable {
         this.moviesBy = "";
         try {
             this.movies = manager.getDb().selectAllMovies();
+            manager.getAverageRatings(movies);
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             this.topMessage = "Unable to connect to database at this time.";
@@ -239,6 +239,7 @@ public class Controller implements Serializable {
         try {
             allMovies = manager.getDb().selectAllMovies();
             allDirectors = manager.getDb().selectAllDirectors();
+            this.moviesBy = " best rated";
         } catch (Exception ex) {
             Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
             this.topMessage = "Unable to connect to database at this time.";
@@ -259,6 +260,58 @@ public class Controller implements Serializable {
 //            if (d.getName().contains(searchKey)){}
 //        }
         this.movies = movies;
+        return "movies?faces-redirect=true";
+    }
+    
+    public String bestRatedMovies() {
+        System.out.println("got in best rated");
+        try {
+            this.movies = manager.selectBestRatedMovies();
+            this.moviesBy = " best rated";
+            System.out.println("loaded best rated");
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movies?faces-redirect=true";
+    }
+    
+    public String worstRatedMovies() {
+        System.out.println("got in worst rated");
+        try {
+//            this.movies = manager.selectWorstRatedMovies();
+            this.moviesBy = " worst rated";
+            System.out.println("loaded worst rated");
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movies?faces-redirect=true";
+    }
+    
+    public String sortNewestToOldest() {
+        System.out.println("got in sort newest to oldest");
+        try {
+//            this.movies = manager.selectSortNewestToOldest();
+            this.moviesBy = " sorted newest to oldest";
+            System.out.println("loaded sort newest to oldest");
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
+        return "movies?faces-redirect=true";
+    }
+    
+    public String sortOldestToNewest() {
+        System.out.println("got in sort oldest to newest");
+        try {
+//            this.movies = manager.selectSortOldestToNewest();
+            this.moviesBy = " sorted oldest to newest";
+            System.out.println("loaded sort oldest to newest");
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            this.topMessage = "Unable to connect to database at this time.";
+        }
         return "movies?faces-redirect=true";
     }
 

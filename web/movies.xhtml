@@ -38,10 +38,11 @@
                             <p:commandButton value="Mark as watched" style="width:150px;font-size: 12px"/>
                             <p:commandButton value="Rate" style="width:60px;font-size: 12px"/>
                         </h:panelGrid>
-                        <h:panelGrid columns="3" cellpadding="5">
+                        <h:panelGrid columns="4" cellpadding="5">
                             <p:outputLabel id="date" value="Released: #{movie.dateReleased}   |"/>
                             <p:outputLabel id="language" value="   Language: #{movie.language}   |"/>
-                            <p:outputLabel id="director" value="   Director: #{controller.getDirectorByID(movie.directorID).name}"/>
+                            <p:outputLabel id="director" value="   Director: #{controller.getDirectorByID(movie.directorID).name}  |"/>
+                            <p:outputLabel id="rating" value="   Rating: #{movie.averageRating}"/>
                         </h:panelGrid>
                     </h:form>
                 </p>
